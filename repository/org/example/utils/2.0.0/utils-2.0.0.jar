@@ -1,0 +1,11 @@
+// Example Utils v2.0.0
+// This is a dummy JAR file for testing purposes
+public class Utils {
+    public static String getVersion() {
+        return "2.0.0";
+    }
+    
+    public static boolean isEmpty(String str) {
+        return str == null || str.trim().isEmpty();
+    }
+}

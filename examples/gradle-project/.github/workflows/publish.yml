@@ -1,0 +1,145 @@
+name: Publish to Maven Repository
+
+on:
+  push:
+    tags:
+      - 'v*'  # 推送 v* 标签时触发，例如 v1.0.0
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. 检出当前项目
+      - name: Checkout project
+        uses: actions/checkout@v4
+
+      # 2. 设置 JDK
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # 3. 设置 Gradle
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      # 4. 从标签提取版本号
+      - name: Extract version from tag
+        id: version
+        run: |
+          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            VERSION=${GITHUB_REF#refs/tags/v}
+          else
+            VERSION="SNAPSHOT"
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "📦 Publishing version: $VERSION"
+
+      # 5. 发布到 Maven Local
+      - name: Publish to Maven Local
+        run: ./gradlew publishToMavenLocal -Pversion=${{ steps.version.outputs.version }} --no-daemon
+        
+      # 6. 验证发布结果
+      - name: Verify published artifacts
+        run: |
+          echo "📋 Published artifacts:"
+          find ~/.m2/repository/com/example -type f \( -name "*.jar" -o -name "*.pom" \) | sort
+
+      # 7. 检出 Maven 仓库
+      - name: Checkout Maven repository
+        uses: actions/checkout@v4
+        with:
+          repository: yourusername/github-maven  # 替换为你的 Maven 仓库
+          token: ${{ secrets.MAVEN_REPO_TOKEN }}
+          path: maven-repo
+
+      # 8. 复制构件到 Maven 仓库
+      - name: Copy artifacts to repository
+        run: |
+          # 定义源和目标路径
+          GROUP_ID="com/example"  # 替换为你的 groupId
+          SOURCE_PATH="$HOME/.m2/repository/$GROUP_ID"
+          TARGET_PATH="maven-repo/repository/$GROUP_ID"
+          
+          # 创建目标目录
+          mkdir -p "$TARGET_PATH"
+          
+          # 复制构件
+          if [ -d "$SOURCE_PATH" ]; then
+            cp -rv "$SOURCE_PATH"/* "$TARGET_PATH/"
+            echo "✅ Successfully copied artifacts"
+          else
+            echo "❌ Source path not found: $SOURCE_PATH"
+            exit 1
+          fi
+          
+          # 显示复制的文件
+          echo "📦 Copied artifacts:"
+          find "$TARGET_PATH" -type f \( -name "*.jar" -o -name "*.pom" \) | sort
+
+      # 9. 提交并推送到 Maven 仓库
+      - name: Commit and push to Maven repository
+        working-directory: maven-repo
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          
+          # 添加变更
+          git add repository/
+          
+          # 检查是否有变更
+          if git diff --staged --quiet; then
+            echo "ℹ️ No changes to commit"
+            exit 0
+          fi
+          
+          # 提交
+          cat > commit_message.txt << EOF
+          📦 发布构件: ${{ github.repository }}@${{ steps.version.outputs.version }}
+          
+          🔖 版本: ${{ steps.version.outputs.version }}
+          📁 仓库: ${{ github.repository }}
+          🔗 提交: ${{ github.sha }}
+          👤 发布者: ${{ github.actor }}
+          ⏰ 时间: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          EOF
+          
+          git commit -F commit_message.txt
+          git push
+          
+          echo "✅ Successfully published to Maven repository"
+
+      # 10. 创建发布摘要
+      - name: Create release summary
+        if: success()
+        run: |
+          cat >> $GITHUB_STEP_SUMMARY << EOF
+          ## 📦 发布成功
+          
+          **版本:** \`${{ steps.version.outputs.version }}\`  
+          **项目:** \`${{ github.repository }}\`  
+          **提交:** \`${{ github.sha }}\`
+          
+          ### 📋 Maven 依赖配置
+          
+          \`\`\`xml
+          <dependency>
+              <groupId>com.example</groupId>
+              <artifactId>example-library</artifactId>
+              <version>${{ steps.version.outputs.version }}</version>
+          </dependency>
+          \`\`\`
+          
+          ### 🔧 Gradle 依赖配置
+          
+          \`\`\`kotlin
+          implementation("com.example:example-library:${{ steps.version.outputs.version }}")
+          \`\`\`
+          
+          ### 🌐 仓库地址
+          
+          查看索引页面: [Maven Repository](https://yourusername.github.io/github-maven/)
+          EOF

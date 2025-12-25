@@ -1,16 +1,705 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import fs from 'fs';
+import path from 'path';
 
+interface Artifact {
+  groupId: string;
+  artifactId: string;
+  versions: string[];
+  latestVersion: string;
+  path: string;
+  versionFiles?: Map<string, {name: string; size: number}[]>;
+}
+
+// Scan the repository directory to discover Maven artifacts
+function scanMavenRepository(baseDir: string): Artifact[] {
+  const artifacts: Artifact[] = [];
+  
+  try {
+    if (!fs.existsSync(baseDir)) {
+      return artifacts;
+    }
+
+    function scanDirectory(dir: string, groupPath: string = '') {
+      const items = fs.readdirSync(dir, { withFileTypes: true });
+      
+      for (const item of items) {
+        if (item.isDirectory()) {
+          const currentPath = path.join(dir, item.name);
+          const newGroupPath = groupPath ? `${groupPath}.${item.name}` : item.name;
+          
+          // Check if this directory contains version directories (with .pom files)
+          const subItems = fs.readdirSync(currentPath, { withFileTypes: true });
+          const versionDirs = subItems.filter(sub => {
+            if (!sub.isDirectory()) return false;
+            const versionPath = path.join(currentPath, sub.name);
+            try {
+              const pomFiles = fs.readdirSync(versionPath).filter(f => f.endsWith('.pom'));
+              return pomFiles.length > 0;
+            } catch {
+              return false;
+            }
+          });
+
+          if (versionDirs.length > 0) {
+            // This is an artifactId directory
+            const versions = versionDirs.map(v => v.name).sort().reverse();
+            const relativePath = path.relative(baseDir, currentPath).replace(/\\/g, '/');
+            
+            // Scan files in each version directory
+            const versionFiles = new Map<string, {name: string; size: number}[]>();
+            versionDirs.forEach(versionDir => {
+              const versionPath = path.join(currentPath, versionDir.name);
+              try {
+                const files = fs.readdirSync(versionPath, { withFileTypes: true })
+                  .filter(f => f.isFile())
+                  .map(f => {
+                    const filePath = path.join(versionPath, f.name);
+                    const stats = fs.statSync(filePath);
+                    return {
+                      name: f.name,
+                      size: stats.size
+                    };
+                  })
+                  .sort((a, b) => {
+                    // Sort files by type priority, then alphabetically
+                    const getPriority = (name: string) => {
+                      if (name.endsWith('.pom')) return 1;
+                      if (name.endsWith('.jar') && !name.includes('-sources') && !name.includes('-javadoc')) return 2;
+                      if (name.includes('-sources.jar')) return 3;
+                      if (name.includes('-javadoc.jar')) return 4;
+                      if (name.endsWith('.sha1')) return 5;
+                      if (name.endsWith('.md5')) return 6;
+                      return 7;
+                    };
+                    const priorityDiff = getPriority(a.name) - getPriority(b.name);
+                    if (priorityDiff !== 0) return priorityDiff;
+                    return a.name.localeCompare(b.name);
+                  });
+                versionFiles.set(versionDir.name, files);
+              } catch (error) {
+                console.error(`Error reading version directory ${versionPath}:`, error);
+              }
+            });
+            
+            artifacts.push({
+              groupId: groupPath,
+              artifactId: item.name,
+              versions: versions,
+              latestVersion: versions[0],
+              path: relativePath,
+              versionFiles: versionFiles
+            });
+          } else {
+            // Continue scanning deeper
+            scanDirectory(currentPath, newGroupPath);
+          }
+        }
+      }
+    }
+
+    scanDirectory(baseDir);
+  } catch (error) {
+    console.error('Error scanning repository:', error);
+  }
+
+  return artifacts;
+}
+
+const repositoryPath = path.join(process.cwd(), 'repository');
+const artifacts = scanMavenRepository(repositoryPath);
+const baseUrl = import.meta.env.BASE_URL || '/';
+const siteUrl = import.meta.env.SITE || 'https://your-repo.github.io/';
+
+// Build a directory tree structure
+interface TreeNode {
+  name: string;
+  type: 'dir' | 'artifact' | 'version';
+  path: string;
+  children?: TreeNode[];
+  versions?: string[];
+  groupId?: string;
+  artifactId?: string;
+  files?: {name: string; size: number}[];
+}
+
+function buildTree(): TreeNode {
+  const root: TreeNode = { name: 'repository', type: 'dir', path: '', children: [] };
+  
+  artifacts.forEach(artifact => {
+    const parts = artifact.groupId.split('.');
+    parts.push(artifact.artifactId);
+    
+    let current = root;
+    let currentPath = '';
+    
+    // Build group path
+    for (let i = 0; i < parts.length - 1; i++) {
+      currentPath = currentPath ? `${currentPath}/${parts[i]}` : parts[i];
+      let child = current.children?.find(c => c.name === parts[i]);
+      if (!child) {
+        child = { name: parts[i], type: 'dir', path: currentPath, children: [] };
+        current.children!.push(child);
+      }
+      current = child;
+    }
+    
+    // Add artifact
+    const artifactName = parts[parts.length - 1];
+    currentPath = `${currentPath}/${artifactName}`;
+    const artifactNode: TreeNode = {
+      name: artifactName,
+      type: 'artifact',
+      path: currentPath,
+      versions: artifact.versions,
+      groupId: artifact.groupId,
+      artifactId: artifact.artifactId,
+      children: []
+    };
+    
+    // Add version nodes as children
+    artifact.versions.forEach(version => {
+      const versionPath = `${currentPath}/${version}`;
+      const files = artifact.versionFiles?.get(version) || [];
+      artifactNode.children!.push({
+        name: version,
+        type: 'version',
+        path: versionPath,
+        groupId: artifact.groupId,
+        artifactId: artifact.artifactId,
+        files: files
+      });
+    });
+    
+    current.children!.push(artifactNode);
+  });
+  
+  return root;
+}
+
+const tree = buildTree();
+const treeJson = JSON.stringify(tree);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <style is:global>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .breadcrumb-section {
+      padding: 16px 24px;
+      background: #f5f5f5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .breadcrumb-label {
+      color: #666;
+      user-select: none;
+    }
+
+    .breadcrumb-link {
+      color: #333;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .breadcrumb-link:hover {
+      color: #8b5cf6;
+    }
+
+    .content {
+      background: #f5f5f5;
+      padding: 12px 24px 24px;
+    }
+
+    .main-layout {
+      display: flex;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .browser-section {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .artifact-card {
+      width: 580px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 28px;
+      position: sticky;
+      top: 24px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-tabs {
+      display: flex;
+      border-bottom: 2px solid #f0f0f0;
+      margin-bottom: 16px;
+    }
+
+    .card-tab {
+      padding: 12px 18px;
+      font-size: 14px;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+    }
+
+    .card-tab.active {
+      color: #333;
+      font-weight: 600;
+      border-bottom-color: #333;
+    }
+
+    .code-block {
+      background: #f5f7fa;
+      border-radius: 6px;
+      padding: 16px;
+      font-family: 'Consolas', 'Monaco', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 14px;
+      color: #333;
+      overflow-x: auto;
+      line-height: 1.8;
+    }
+
+    .code-block pre {
+      font-family: 'Consolas', 'Monaco', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .code-block .tag {
+      color: #e83e8c;
+    }
+
+    .code-block .attr {
+      color: #0969da;
+    }
+
+    .code-block .keyword {
+      color: #d73a49;
+    }
+
+    .code-block .function {
+      color: #6f42c1;
+    }
+
+    .code-block .string {
+      color: #032f62;
+    }
+
+    .browser-list {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .browser-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background 0.15s;
+      cursor: pointer;
+    }
+
+    .browser-entry:last-child {
+      border-bottom: none;
+    }
+
+    .browser-entry:hover {
+      background: #f9fafb;
+    }
+
+    .file-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .default-icon {
+      font-size: 10px;
+      color: #666;
+      width: 16px;
+      text-align: center;
+    }
+
+    .default-filename {
+      font-size: 17px;
+      color: #333;
+      font-family: ui-monospace, 'SF Mono', Consolas, monospace;
+      font-weight: 600;
+    }
+
+    .file-link {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+    }
+
+    .file-link:hover .default-filename {
+      color: #8b5cf6;
+    }
+
+    .entry-details {
+      font-size: 13px;
+      color: #999;
+      min-width: 100px;
+      text-align: right;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 80px 20px;
+      background: #fff;
+      border-radius: 8px;
+      color: #999;
+    }
+
+    .empty-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      opacity: 0.3;
+    }
+
+    @media (max-width: 1024px) {
+      .main-layout {
+        flex-direction: column;
+      }
+      .artifact-card {
+        width: 100%;
+        position: static;
+      }
+    }
+  </style>
+
+  <script is:inline define:vars={{ tree: treeJson, baseUrl, siteUrl }}>
+    // Parse tree data
+    const treeData = JSON.parse(tree);
+    let currentPath = [];
+    let currentNode = treeData;
+    let selectedArtifact = null;
+
+    // Initialize from URL hash
+    function initFromHash() {
+      const hash = window.location.hash.slice(1);
+      if (hash) {
+        currentPath = hash.split('/').filter(Boolean);
+        navigateToPath(currentPath);
+      } else {
+        renderBrowser();
+      }
+    }
+
+    // Navigate to a path
+    function navigateToPath(pathArray) {
+      currentNode = treeData;
+      currentPath = [];
+      
+      for (const part of pathArray) {
+        const child = currentNode.children?.find(c => c.name === part);
+        if (child) {
+          currentPath.push(part);
+          currentNode = child;
+        } else {
+          break;
+        }
+      }
+      
+      renderBrowser();
+      updateBreadcrumb();
+      
+      // Update artifact card if we're at an artifact
+      if (currentNode.type === 'artifact') {
+        selectedArtifact = currentNode;
+        updateArtifactCard();
+      } else {
+        selectedArtifact = null;
+        resetArtifactCard();
+      }
+    }
+
+    // Render browser list
+    function renderBrowser() {
+      const browserList = document.getElementById('browser-list');
+      if (!browserList) return;
+      
+      const items = currentNode.children || [];
+      
+      // Check if current node is a version node
+      const isVersionNode = currentNode.type === 'version';
+      
+      if (items.length === 0 && !isVersionNode) {
+        browserList.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-icon">📭</div>
+            <p>No items found</p>
+          </div>
+        `;
+        return;
+      }
+      
+      let html = '<div class="browser-list">';
+      
+      // If current node is a version, show files in that version directory
+      if (isVersionNode && currentNode.files) {
+        const versionPath = `${currentNode.groupId.replace(/\./g, '/')}/${currentNode.artifactId}/${currentNode.name}`;
+        const versionUrl = `${baseUrl}repository/${versionPath}/`;
+        
+        currentNode.files.forEach(file => {
+          // Format file size
+          let sizeStr = '';
+          if (file.size < 1024) {
+            sizeStr = file.size + ' B';
+          } else if (file.size < 1024 * 1024) {
+            sizeStr = (file.size / 1024).toFixed(2) + ' kB';
+          } else {
+            sizeStr = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
+          }
+          
+          html += `
+            <a href="${versionUrl}${file.name}" class="file-link" target="_blank">
+              <div class="browser-entry">
+                <div class="file-info">
+                  <div class="default-icon">⚪</div>
+                  <div class="default-filename">${file.name}</div>
+                </div>
+                <div class="entry-details">${sizeStr}</div>
+              </div>
+            </a>
+          `;
+        });
+      } else {
+        // Show child items (directories/artifacts/versions)
+        items.forEach(item => {
+          if (item.type === 'artifact') {
+            html += `
+              <div class="browser-entry" data-path="${item.path}">
+                <div class="file-info">
+                  <div class="default-icon">⚫</div>
+                  <div class="default-filename">${item.name}</div>
+                </div>
+                <div class="entry-details">${item.versions?.length || 0} versions</div>
+              </div>
+            `;
+          } else if (item.type === 'version') {
+            html += `
+              <div class="browser-entry" data-path="${item.path}">
+                <div class="file-info">
+                  <div class="default-icon">⚫</div>
+                  <div class="default-filename">${item.name}</div>
+                </div>
+                <div class="entry-details"></div>
+              </div>
+            `;
+          } else {
+            html += `
+              <div class="browser-entry" data-path="${item.path}">
+                <div class="file-info">
+                  <div class="default-icon">⚫</div>
+                  <div class="default-filename">${item.name}</div>
+                </div>
+                <div class="entry-details"></div>
+              </div>
+            `;
+          }
+        });
+      }
+      
+      html += '</div>';
+      browserList.innerHTML = html;
+      
+      // Add click handlers (only for non-link entries)
+      browserList.querySelectorAll('.browser-entry[data-path]').forEach(entry => {
+        entry.addEventListener('click', () => {
+          const path = entry.getAttribute('data-path');
+          window.location.hash = path;
+        });
+      });
+    }
+
+    // Update breadcrumb
+    function updateBreadcrumb() {
+      const breadcrumb = document.getElementById('breadcrumb');
+      if (!breadcrumb) return;
+      
+      let html = '<span class="breadcrumb-label">Index of </span>';
+      html += '<a href="#" class="breadcrumb-link">/</a>';
+      
+      let accPath = '';
+      currentPath.forEach((part) => {
+        accPath += (accPath ? '/' : '') + part;
+        html += `<a href="#${accPath}" class="breadcrumb-link">${part}/</a>`;
+      });
+      
+      breadcrumb.innerHTML = html;
+    }
+
+    // Update artifact card with selected artifact info
+    function updateArtifactCard() {
+      if (!selectedArtifact) return;
+      
+      const titleElement = document.querySelector('.card-title span:first-child');
+      if (titleElement) {
+        titleElement.textContent = 'Artifact details';
+      }
+      
+      updateCodeBlock();
+    }
+
+    // Reset artifact card to repository info
+    function resetArtifactCard() {
+      const titleElement = document.querySelector('.card-title span:first-child');
+      if (titleElement) {
+        titleElement.textContent = 'Repository details';
+      }
+      
+      updateCodeBlock();
+    }
+
+    // Update code block based on active tab and selected artifact
+    function updateCodeBlock() {
+      const activeTab = document.querySelector('.card-tab.active');
+      if (!activeTab) return;
+      
+      const tabName = activeTab.textContent.trim();
+      const codeBlock = document.querySelector('.code-block pre');
+      if (!codeBlock) return;
+      
+      let code = '';
+      
+      if (selectedArtifact) {
+        // Show artifact dependency
+        if (tabName === 'Maven') {
+          code = `<span class="tag">&lt;dependency&gt;</span>
+  <span class="tag">&lt;groupId&gt;</span>${selectedArtifact.groupId}<span class="tag">&lt;/groupId&gt;</span>
+  <span class="tag">&lt;artifactId&gt;</span>${selectedArtifact.artifactId}<span class="tag">&lt;/artifactId&gt;</span>
+  <span class="tag">&lt;version&gt;</span>${selectedArtifact.versions[0]}<span class="tag">&lt;/version&gt;</span>
+<span class="tag">&lt;/dependency&gt;</span>`;
+        } else if (tabName === 'Gradle Kotlin') {
+          code = `<span class="function">implementation</span>(<span class="string">"${selectedArtifact.groupId}:${selectedArtifact.artifactId}:${selectedArtifact.versions[0]}"</span>)`;
+        } else if (tabName === 'Gradle Groovy') {
+          code = `<span class="function">implementation</span> <span class="string">'${selectedArtifact.groupId}:${selectedArtifact.artifactId}:${selectedArtifact.versions[0]}'</span>`;
+        }
+      } else {
+        // Show repository configuration
+        if (tabName === 'Maven') {
+          code = `<span class="tag">&lt;repository&gt;</span>
+  <span class="tag">&lt;id&gt;</span>github-maven<span class="tag">&lt;/id&gt;</span>
+  <span class="tag">&lt;name&gt;</span>GitHub Maven Repository<span class="tag">&lt;/name&gt;</span>
+  <span class="tag">&lt;url&gt;</span>${siteUrl}repository<span class="tag">&lt;/url&gt;</span>
+<span class="tag">&lt;/repository&gt;</span>`;
+        } else if (tabName === 'Gradle Kotlin') {
+          code = `<span class="function">maven</span>(<span class="string">"${siteUrl}repository"</span>)`;
+        } else if (tabName === 'Gradle Groovy') {
+          code = `<span class="function">maven</span> <span class="string">"${siteUrl}repository"</span>`;
+        }
+      }
+      
+      codeBlock.innerHTML = code;
+    }
+
+    // Tab switching
+    function setupTabs() {
+      document.querySelectorAll('.card-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.card-tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          updateCodeBlock();
+        });
+      });
+    }
+
+    // Handle hash changes
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.slice(1);
+      const pathArray = hash.split('/').filter(Boolean);
+      navigateToPath(pathArray);
+    });
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+      setupTabs();
+      updateCodeBlock(); // 立即渲染初始代码块
+      initFromHash();
+    });
+  </script>
+
+  <div class="breadcrumb-section">
+    <div class="container">
+      <p id="breadcrumb" class="breadcrumb">
+        <span class="breadcrumb-label">Index of </span>
+        <a href="#" class="breadcrumb-link">/</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <div class="main-layout">
+        <!-- 左侧文件浏览器 -->
+        <div class="browser-section">
+          <div id="browser-list">
+            <!-- Content will be dynamically generated -->
+          </div>
+        </div>
+
+        <!-- 右侧依赖信息卡片 -->
+        <aside class="artifact-card">
+          <div class="card-title">
+            <span>Repository details</span>
+            <span style="cursor: pointer;">📋</span>
+          </div>
+          
+          <div class="card-tabs">
+            <div class="card-tab active">Maven</div>
+            <div class="card-tab">Gradle Kotlin</div>
+            <div class="card-tab">Gradle Groovy</div>
+          </div>
+
+          <div class="code-block">
+            <pre></pre>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</Layout>

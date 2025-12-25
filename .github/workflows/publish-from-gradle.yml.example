@@ -1,0 +1,127 @@
+# 这是一个示例工作流，展示如何从 Gradle 项目发布构件到此 Maven 仓库
+# 
+# 使用方法：
+# 1. 在你的 Gradle 项目仓库中创建 .github/workflows/publish.yml
+# 2. 复制此文件内容并根据需要修改
+# 3. 配置必要的 Secrets（见下方说明）
+
+name: Publish to Maven Repository
+
+on:
+  push:
+    tags:
+      - 'v*'  # 当推送版本标签时触发（如 v1.0.0）
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Gradle 项目
+        uses: actions/checkout@v4
+        with:
+          path: gradle-project
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'  # 根据你的项目需求修改
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Extract version from tag
+        id: get_version
+        run: |
+          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            VERSION=${GITHUB_REF#refs/tags/v}
+          else
+            VERSION="SNAPSHOT"
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Publishing version: $VERSION"
+
+      - name: Build and publish to Maven Local
+        working-directory: gradle-project
+        run: |
+          # 设置版本（如果你的 build.gradle 支持）
+          ./gradlew publishToMavenLocal -Pversion=${{ steps.get_version.outputs.version }}
+        env:
+          GRADLE_OPTS: -Dorg.gradle.daemon=false
+
+      - name: Checkout Maven 仓库
+        uses: actions/checkout@v4
+        with:
+          repository: yourusername/github-maven  # 修改为你的 Maven 仓库
+          token: ${{ secrets.MAVEN_REPO_TOKEN }}  # 需要配置 Personal Access Token
+          path: maven-repo
+
+      - name: Copy artifacts to Maven repository
+        run: |
+          # 从 Maven Local 复制构件到仓库
+          # Maven Local 默认位置：~/.m2/repository
+          
+          # 复制你的构件（根据实际 groupId 和 artifactId 修改路径）
+          # 示例：com.example:my-library
+          SOURCE_PATH="$HOME/.m2/repository"
+          TARGET_PATH="maven-repo/repository"
+          
+          # 查找并复制所有新发布的构件
+          # 方法1：如果你知道具体的 groupId
+          GROUP_PATH="com/example"  # 修改为你的 groupId（用 / 分隔）
+          if [ -d "$SOURCE_PATH/$GROUP_PATH" ]; then
+            mkdir -p "$TARGET_PATH/$GROUP_PATH"
+            cp -r "$SOURCE_PATH/$GROUP_PATH"/* "$TARGET_PATH/$GROUP_PATH/"
+            echo "Copied artifacts from $GROUP_PATH"
+          fi
+          
+          # 方法2：复制所有内容（如果有多个 groupId）
+          # rsync -av --exclude='*.repositories' "$SOURCE_PATH/" "$TARGET_PATH/"
+          
+          # 显示复制的文件
+          echo "Published artifacts:"
+          find "$TARGET_PATH" -name "*.jar" -o -name "*.pom" | sort
+
+      - name: Commit and push to Maven repository
+        working-directory: maven-repo
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          
+          git add repository/
+          
+          # 检查是否有变更
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          
+          # 生成提交信息
+          COMMIT_MSG="发布构件: ${{ github.repository }}@${{ steps.get_version.outputs.version }}
+
+          来源仓库: ${{ github.repository }}
+          版本: ${{ steps.get_version.outputs.version }}
+          提交: ${{ github.sha }}
+          触发者: ${{ github.actor }}
+          "
+          
+          git commit -m "$COMMIT_MSG"
+          git push
+
+      - name: Create release summary
+        run: |
+          echo "## 📦 发布成功" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**版本:** ${{ steps.get_version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**仓库:** ${{ github.repository }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 使用方法" >> $GITHUB_STEP_SUMMARY
+          echo '```xml' >> $GITHUB_STEP_SUMMARY
+          echo '<dependency>' >> $GITHUB_STEP_SUMMARY
+          echo '    <groupId>com.example</groupId>' >> $GITHUB_STEP_SUMMARY
+          echo '    <artifactId>your-artifact</artifactId>' >> $GITHUB_STEP_SUMMARY
+          echo '    <version>${{ steps.get_version.outputs.version }}</version>' >> $GITHUB_STEP_SUMMARY
+          echo '</dependency>' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
