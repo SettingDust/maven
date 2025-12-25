@@ -112,6 +112,11 @@ const artifacts = scanMavenRepository(repositoryPath);
 const baseUrl = import.meta.env.BASE_URL || '/';
 const siteUrl = import.meta.env.SITE || 'https://example.github.io/';
 
+// Build complete repository URL with base path
+const repositoryUrl = `${siteUrl}${baseUrl !== '/' ? baseUrl : ''}repository/`.replace(/\/\//g, '/').replace(/:\//, '://');
+
+const { title = 'SettingDust\'s Maven', siteName = 'SettingDust\'s Maven' } = Astro.props;
+
 // Build a directory tree structure
 interface TreeNode {
   name: string;
@@ -180,9 +185,10 @@ function buildTree(): TreeNode {
 
 const tree = buildTree();
 const treeJson = JSON.stringify(tree);
+const siteNameJson = JSON.stringify(siteName);
 ---
 
-<Layout>
+<Layout siteName={siteName}>
   <style is:global>
     * {
       margin: 0;
@@ -411,9 +417,10 @@ const treeJson = JSON.stringify(tree);
     }
   </style>
 
-  <script is:inline define:vars={{ tree: treeJson, baseUrl, siteUrl }}>
+  <script is:inline define:vars={{ tree: treeJson, baseUrl, repositoryUrl, siteName: siteNameJson }}>
     // Parse tree data
     const treeData = JSON.parse(tree);
+    const repositoryName = JSON.parse(siteName);
     let currentPath = [];
     let currentNode = treeData;
     let selectedArtifact = null;
@@ -589,7 +596,7 @@ const treeJson = JSON.stringify(tree);
     function resetArtifactCard() {
       const titleElement = document.querySelector('.card-title span:first-child');
       if (titleElement) {
-        titleElement.textContent = 'Repository details';
+        titleElement.textContent = repositoryName;
       }
       
       updateCodeBlock();
@@ -623,14 +630,18 @@ const treeJson = JSON.stringify(tree);
         // Show repository configuration
         if (tabName === 'Maven') {
           code = `<span class="tag">&lt;repository&gt;</span>
-  <span class="tag">&lt;id&gt;</span>github-maven<span class="tag">&lt;/id&gt;</span>
-  <span class="tag">&lt;name&gt;</span>GitHub Maven Repository<span class="tag">&lt;/name&gt;</span>
-  <span class="tag">&lt;url&gt;</span>${siteUrl}repository<span class="tag">&lt;/url&gt;</span>
+  <span class="tag">&lt;id&gt;</span>${repositoryName.toLowerCase().replace(/\s+/g, '-')}<span class="tag">&lt;/id&gt;</span>
+  <span class="tag">&lt;name&gt;</span>${repositoryName}<span class="tag">&lt;/name&gt;</span>
+  <span class="tag">&lt;url&gt;</span>${repositoryUrl}<span class="tag">&lt;/url&gt;</span>
 <span class="tag">&lt;/repository&gt;</span>`;
         } else if (tabName === 'Gradle Kotlin') {
-          code = `<span class="function">maven</span>(<span class="string">"${siteUrl}repository"</span>)`;
+          code = `<span class="function">maven</span>(<span class="string">"${repositoryUrl}"</span>) {
+  name = <span class="string">"${repositoryName}"</span>
+}`;
         } else if (tabName === 'Gradle Groovy') {
-          code = `<span class="function">maven</span> <span class="string">"${siteUrl}repository"</span>`;
+          code = `<span class="function">maven</span>(<span class="string">"${repositoryUrl}"</span>) {
+  name <span class="string">"${repositoryName}"</span>
+}`;
         }
       }
       
