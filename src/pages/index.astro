@@ -1,128 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import fs from 'fs';
-import path from 'path';
 
-interface Artifact {
-  groupId: string;
-  artifactId: string;
-  versions: string[];
-  latestVersion: string;
-  path: string;
-  versionFiles?: Map<string, {name: string; size: number}[]>;
-}
-
-// Scan the repository directory to discover Maven artifacts
-function scanMavenRepository(baseDir: string): Artifact[] {
-  const artifacts: Artifact[] = [];
-  
-  try {
-    if (!fs.existsSync(baseDir)) {
-      return artifacts;
-    }
-
-    function scanDirectory(dir: string, groupPath: string = '') {
-      const items = fs.readdirSync(dir, { withFileTypes: true });
-      
-      for (const item of items) {
-        if (item.isDirectory()) {
-          const currentPath = path.join(dir, item.name);
-          const newGroupPath = groupPath ? `${groupPath}.${item.name}` : item.name;
-          
-          // Check if this directory contains version directories (with .pom files)
-          const subItems = fs.readdirSync(currentPath, { withFileTypes: true });
-          const versionDirs = subItems.filter(sub => {
-            if (!sub.isDirectory()) return false;
-            const versionPath = path.join(currentPath, sub.name);
-            try {
-              const pomFiles = fs.readdirSync(versionPath).filter(f => f.endsWith('.pom'));
-              return pomFiles.length > 0;
-            } catch {
-              return false;
-            }
-          });
-
-          if (versionDirs.length > 0) {
-            // This is an artifactId directory
-            const versions = versionDirs.map(v => v.name).sort().reverse();
-            const relativePath = path.relative(baseDir, currentPath).replace(/\\/g, '/');
-            
-            // Scan files in each version directory
-            const versionFiles = new Map<string, {name: string; size: number}[]>();
-            versionDirs.forEach(versionDir => {
-              const versionPath = path.join(currentPath, versionDir.name);
-              const version = versionDir.name;
-              const artifactId = item.name;
-              
-              try {
-                const files = fs.readdirSync(versionPath, { withFileTypes: true })
-                  .filter(f => f.isFile())
-                  .map(f => {
-                    const filePath = path.join(versionPath, f.name);
-                    const stats = fs.statSync(filePath);
-                    return {
-                      name: f.name,
-                      size: stats.size
-                    };
-                  })
-                  .sort((a, b) => {
-                    // Sort files by type priority, then alphabetically
-                    const mainJarName = `${artifactId}-${version}.jar`;
-                    
-                    const getPriority = (name: string) => {
-                      if (name.endsWith('.pom')) return 1;
-                      
-                      // Check if it's the main jar (exact match)
-                      if (name === mainJarName) return 2;
-                      
-                      // Check if it's a jar file
-                      if (name.endsWith('.jar')) {
-                        if (name.includes('-sources.jar')) return 3;
-                        if (name.includes('-javadoc.jar')) return 4;
-                        // Other jars with classifiers
-                        return 5;
-                      }
-                      
-                      if (name.endsWith('.sha1')) return 6;
-                      if (name.endsWith('.md5')) return 7;
-                      return 8;
-                    };
-                    const priorityDiff = getPriority(a.name) - getPriority(b.name);
-                    if (priorityDiff !== 0) return priorityDiff;
-                    return a.name.localeCompare(b.name);
-                  });
-                versionFiles.set(versionDir.name, files);
-              } catch (error) {
-                console.error(`Error reading version directory ${versionPath}:`, error);
-              }
-            });
-            
-            artifacts.push({
-              groupId: groupPath,
-              artifactId: item.name,
-              versions: versions,
-              latestVersion: versions[0],
-              path: relativePath,
-              versionFiles: versionFiles
-            });
-          } else {
-            // Continue scanning deeper
-            scanDirectory(currentPath, newGroupPath);
-          }
-        }
-      }
-    }
-
-    scanDirectory(baseDir);
-  } catch (error) {
-    console.error('Error scanning repository:', error);
-  }
-
-  return artifacts;
-}
-
-const repositoryPath = path.join(process.cwd(), 'repository');
-const artifacts = scanMavenRepository(repositoryPath);
 const baseUrl = import.meta.env.BASE_URL || '/';
 const siteUrl = import.meta.env.SITE || 'https://example.github.io/';
 
@@ -130,75 +8,6 @@ const siteUrl = import.meta.env.SITE || 'https://example.github.io/';
 const repositoryUrl = `${siteUrl}${baseUrl !== '/' ? baseUrl : ''}repository/`.replace(/\/\//g, '/').replace(/:\//, '://');
 
 const { title = 'SettingDust\'s Maven', siteName = 'SettingDust\'s Maven' } = Astro.props;
-
-// Build a directory tree structure
-interface TreeNode {
-  name: string;
-  type: 'dir' | 'artifact' | 'version';
-  path: string;
-  children?: TreeNode[];
-  versions?: string[];
-  groupId?: string;
-  artifactId?: string;
-  files?: {name: string; size: number}[];
-}
-
-function buildTree(): TreeNode {
-  const root: TreeNode = { name: 'repository', type: 'dir', path: '', children: [] };
-  
-  artifacts.forEach(artifact => {
-    const parts = artifact.groupId.split('.');
-    parts.push(artifact.artifactId);
-    
-    let current = root;
-    let currentPath = '';
-    
-    // Build group path
-    for (let i = 0; i < parts.length - 1; i++) {
-      currentPath = currentPath ? `${currentPath}/${parts[i]}` : parts[i];
-      let child = current.children?.find(c => c.name === parts[i]);
-      if (!child) {
-        child = { name: parts[i], type: 'dir', path: currentPath, children: [] };
-        current.children!.push(child);
-      }
-      current = child;
-    }
-    
-    // Add artifact
-    const artifactName = parts[parts.length - 1];
-    currentPath = `${currentPath}/${artifactName}`;
-    const artifactNode: TreeNode = {
-      name: artifactName,
-      type: 'artifact',
-      path: currentPath,
-      versions: artifact.versions,
-      groupId: artifact.groupId,
-      artifactId: artifact.artifactId,
-      children: []
-    };
-    
-    // Add version nodes as children
-    artifact.versions.forEach(version => {
-      const versionPath = `${currentPath}/${version}`;
-      const files = artifact.versionFiles?.get(version) || [];
-      artifactNode.children!.push({
-        name: version,
-        type: 'version',
-        path: versionPath,
-        groupId: artifact.groupId,
-        artifactId: artifact.artifactId,
-        files: files
-      });
-    });
-    
-    current.children!.push(artifactNode);
-  });
-  
-  return root;
-}
-
-const tree = buildTree();
-const treeJson = JSON.stringify(tree);
 const siteNameJson = JSON.stringify(siteName);
 ---
 
@@ -431,42 +240,114 @@ const siteNameJson = JSON.stringify(siteName);
     }
   </style>
 
-  <script is:inline define:vars={{ tree: treeJson, baseUrl, repositoryUrl, siteName: siteNameJson }}>
-    // Parse tree data
-    const treeData = JSON.parse(tree);
+  <script is:inline define:vars={{ baseUrl, repositoryUrl, siteName: siteNameJson }}>
     const repositoryName = JSON.parse(siteName);
     let currentPath = [];
-    let currentNode = treeData;
+    let currentNode = null;
+    let treeData = null;
     let selectedArtifact = null;
+    let loadedVersionFiles = {}; // Cache for loaded version files
+
+    // Load tree data from JSON file
+    async function loadTreeData() {
+      try {
+        const response = await fetch(`${baseUrl}tree-data/tree.json`);
+        if (!response.ok) {
+          throw new Error('Failed to load tree data');
+        }
+        treeData = await response.json();
+        currentNode = treeData;
+        return true;
+      } catch (error) {
+        console.error('Error loading tree data:', error);
+        return false;
+      }
+    }
+
+    // Load version files from JSON
+    async function loadVersionFiles(versionPath) {
+      // Check cache first
+      if (loadedVersionFiles[versionPath]) {
+        return loadedVersionFiles[versionPath];
+      }
+
+      try {
+        const jsonFileName = versionPath.replace(/\//g, '_') + '.json';
+        const response = await fetch(`${baseUrl}tree-data/${jsonFileName}`);
+        if (!response.ok) {
+          throw new Error(`Failed to load version files: ${jsonFileName}`);
+        }
+        const data = await response.json();
+        loadedVersionFiles[versionPath] = data.files;
+        return data.files;
+      } catch (error) {
+        console.error('Error loading version files:', error);
+        return [];
+      }
+    }
 
     // Initialize from URL hash
-    function initFromHash() {
+    async function initFromHash() {
       const hash = window.location.hash.slice(1);
       if (hash) {
         currentPath = hash.split('/').filter(Boolean);
-        navigateToPath(currentPath);
+        await navigateToPath(currentPath);
       } else {
         renderBrowser();
       }
     }
 
     // Navigate to a path
-    function navigateToPath(pathArray) {
+    async function navigateToPath(pathArray) {
+      if (!treeData) return;
+      
       currentNode = treeData;
       currentPath = [];
+      let parentArtifact = null;
       
       for (const part of pathArray) {
         const child = currentNode.children?.find(c => c.name === part);
         if (child) {
           currentPath.push(part);
+          // Track the artifact node as we navigate
+          if (child.type === 'artifact') {
+            parentArtifact = child;
+          }
           currentNode = child;
         } else {
           break;
         }
       }
       
-      renderBrowser();
+      // If it's a version node, load its files
+      if (currentNode.type === 'version') {
+        // Show loading state first
+        updateBreadcrumb();
+        renderBrowser();
+        
+        const files = await loadVersionFiles(currentNode.path);
+        currentNode.files = files;
+        
+        // Re-render with loaded files
+        renderBrowser();
+        
+        // Set artifact info from parent or construct from version node
+        if (parentArtifact) {
+          selectedArtifact = parentArtifact;
+        } else {
+          // Construct artifact info from version node
+          selectedArtifact = {
+            groupId: currentNode.groupId,
+            artifactId: currentNode.artifactId,
+            versions: [currentNode.name]
+          };
+        }
+        updateArtifactCard();
+        return;
+      }
+      
       updateBreadcrumb();
+      renderBrowser();
       
       // Update artifact card if we're at an artifact
       if (currentNode.type === 'artifact') {
@@ -487,6 +368,17 @@ const siteNameJson = JSON.stringify(siteName);
       
       // Check if current node is a version node
       const isVersionNode = currentNode.type === 'version';
+      
+      // If it's a version node but files not loaded yet, show loading
+      if (isVersionNode && !currentNode.files) {
+        browserList.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-icon">⏳</div>
+            <p>Loading files...</p>
+          </div>
+        `;
+        return;
+      }
       
       if (items.length === 0 && !isVersionNode) {
         browserList.innerHTML = `
@@ -674,17 +566,33 @@ const siteNameJson = JSON.stringify(siteName);
     }
 
     // Handle hash changes
-    window.addEventListener('hashchange', () => {
+    window.addEventListener('hashchange', async () => {
       const hash = window.location.hash.slice(1);
       const pathArray = hash.split('/').filter(Boolean);
-      navigateToPath(pathArray);
+      await navigateToPath(pathArray);
     });
 
     // Initialize
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('DOMContentLoaded', async () => {
       setupTabs();
       updateCodeBlock(); // 立即渲染初始代码块
-      initFromHash();
+      
+      // Load tree data first
+      const loaded = await loadTreeData();
+      if (loaded) {
+        await initFromHash();
+      } else {
+        // Show error state
+        const browserList = document.getElementById('browser-list');
+        if (browserList) {
+          browserList.innerHTML = `
+            <div class="empty-state">
+              <div class="empty-icon">❌</div>
+              <p>Failed to load repository data</p>
+            </div>
+          `;
+        }
+      }
     });
   </script>
 

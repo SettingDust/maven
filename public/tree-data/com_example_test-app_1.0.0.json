@@ -1,0 +1,40 @@
+{
+  "files": [
+    {
+      "name": "test-app-1.0.0.pom",
+      "size": 22
+    },
+    {
+      "name": "test-app-1.0.0.jar",
+      "size": 22
+    },
+    {
+      "name": "test-app-1.0.0-sources.jar",
+      "size": 28
+    },
+    {
+      "name": "test-app-1.0.0-javadoc.jar",
+      "size": 28
+    },
+    {
+      "name": "test-app-1.0.0-fabric-1.20.jar",
+      "size": 26
+    },
+    {
+      "name": "test-app-1.0.0-forge.jar",
+      "size": 24
+    },
+    {
+      "name": "test-app-1.0.0.jar.sha1",
+      "size": 14
+    },
+    {
+      "name": "test-app-1.0.0.jar.md5",
+      "size": 12
+    },
+    {
+      "name": "test-app-1.0.0.module",
+      "size": 18
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "repository",
+  "type": "dir",
+  "path": "",
+  "children": [
+    {
+      "name": "com",
+      "type": "dir",
+      "path": "com",
+      "children": [
+        {
+          "name": "example",
+          "type": "dir",
+          "path": "com/example",
+          "children": [
+            {
+              "name": "test-app",
+              "type": "artifact",
+              "path": "com/example/test-app",
+              "groupId": "com.example",
+              "artifactId": "test-app",
+              "versions": [
+                "1.0.0"
+              ],
+              "children": [
+                {
+                  "name": "1.0.0",
+                  "type": "version",
+                  "path": "com/example/test-app/1.0.0",
+                  "groupId": "com.example",
+                  "artifactId": "test-app",
+                  "hasData": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -3,11 +3,12 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "node scripts/generate-tree.mjs && astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "node scripts/generate-tree.mjs && astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "gen-tree": "node scripts/generate-tree.mjs"
   },
   "dependencies": {
     "astro": "^5.0.0"
