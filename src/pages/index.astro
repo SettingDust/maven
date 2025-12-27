@@ -7,8 +7,21 @@ const siteUrl = import.meta.env.SITE || 'https://example.github.io/';
 // Build complete repository URL with base path
 const repositoryUrl = `${siteUrl}${baseUrl !== '/' ? baseUrl : ''}repository/`.replace(/\/\//g, '/').replace(/:\//, '://');
 
+// Extract GitHub repository URL for raw file links
+let githubRepoUrl = '';
+try {
+  const url = new URL(siteUrl);
+  const match = url.hostname.match(/^([^\.]+)\.github\.io$/);
+  if (match) {
+    const username = match[1];
+    const repoName = baseUrl.split('/').filter(Boolean)[0] || 'github-maven';
+    githubRepoUrl = `https://github.com/${username}/${repoName}`;
+  }
+} catch {}
+
 const { title = 'SettingDust\'s Maven', siteName = 'SettingDust\'s Maven' } = Astro.props;
 const siteNameJson = JSON.stringify(siteName);
+const githubRepoUrlJson = JSON.stringify(githubRepoUrl);
 ---
 
 <Layout siteName={siteName}>
@@ -240,8 +253,9 @@ const siteNameJson = JSON.stringify(siteName);
     }
   </style>
 
-  <script is:inline define:vars={{ baseUrl, repositoryUrl, siteName: siteNameJson }}>
+  <script is:inline define:vars={{ baseUrl, repositoryUrl, siteName: siteNameJson, githubRepoUrl: githubRepoUrlJson }}>
     const repositoryName = JSON.parse(siteName);
+    const githubRepo = JSON.parse(githubRepoUrl);
     let currentPath = [];
     let currentNode = null;
     let treeData = null;
@@ -395,7 +409,8 @@ const siteNameJson = JSON.stringify(siteName);
       // If current node is a version, show files in that version directory
       if (isVersionNode && currentNode.files) {
         const versionPath = `${currentNode.groupId.replace(/\./g, '/')}/${currentNode.artifactId}/${currentNode.name}`;
-        const versionUrl = `${baseUrl}repository/${versionPath}/`;
+        // Use GitHub repository raw file URL instead of GitHub Pages
+        const fileBaseUrl = githubRepo ? `${githubRepo}/raw/main/repository/${versionPath}/` : `${baseUrl}repository/${versionPath}/`;
         
         currentNode.files.forEach(file => {
           // Format file size
@@ -409,7 +424,7 @@ const siteNameJson = JSON.stringify(siteName);
           }
           
           html += `
-            <a href="${versionUrl}${file.name}" class="file-link" target="_blank">
+            <a href="${fileBaseUrl}${file.name}" class="file-link" target="_blank">
               <div class="browser-entry">
                 <div class="file-info">
                   <div class="default-icon">⚪</div>
