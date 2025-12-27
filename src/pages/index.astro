@@ -9,6 +9,7 @@ const repositoryUrl = `${siteUrl}${baseUrl !== '/' ? baseUrl : ''}repository/`.r
 
 // Extract GitHub repository URL for raw file links
 let githubRepoUrl = '';
+let githubRawUrl = '';
 try {
   const url = new URL(siteUrl);
   const match = url.hostname.match(/^([^\.]+)\.github\.io$/);
@@ -16,12 +17,14 @@ try {
     const username = match[1];
     const repoName = baseUrl.split('/').filter(Boolean)[0] || 'github-maven';
     githubRepoUrl = `https://github.com/${username}/${repoName}`;
+    githubRawUrl = `https://raw.githubusercontent.com/${username}/${repoName}/main/repository/`;
   }
 } catch {}
 
 const { title = 'SettingDust\'s Maven', siteName = 'SettingDust\'s Maven' } = Astro.props;
 const siteNameJson = JSON.stringify(siteName);
 const githubRepoUrlJson = JSON.stringify(githubRepoUrl);
+const githubRawUrlJson = JSON.stringify(githubRawUrl);
 ---
 
 <Layout siteName={siteName}>
@@ -253,9 +256,14 @@ const githubRepoUrlJson = JSON.stringify(githubRepoUrl);
     }
   </style>
 
-  <script is:inline define:vars={{ baseUrl, repositoryUrl, siteName: siteNameJson, githubRepoUrl: githubRepoUrlJson }}>
+  <script is:inline define:vars={{ baseUrl, repositoryUrl, siteName: siteNameJson, githubRepoUrl: githubRepoUrlJson, githubRawUrl: githubRawUrlJson }}>
     const repositoryName = JSON.parse(siteName);
     const githubRepo = JSON.parse(githubRepoUrl);
+    const githubRaw = JSON.parse(githubRawUrl);
+    
+    // Use GitHub raw URL for Maven repository if available
+    const mavenRepoUrl = githubRaw || repositoryUrl;
+    
     let currentPath = [];
     let currentNode = null;
     let treeData = null;
@@ -409,8 +417,8 @@ const githubRepoUrlJson = JSON.stringify(githubRepoUrl);
       // If current node is a version, show files in that version directory
       if (isVersionNode && currentNode.files) {
         const versionPath = `${currentNode.groupId.replace(/\./g, '/')}/${currentNode.artifactId}/${currentNode.name}`;
-        // Use GitHub repository raw file URL instead of GitHub Pages
-        const fileBaseUrl = githubRepo ? `${githubRepo}/raw/main/repository/${versionPath}/` : `${baseUrl}repository/${versionPath}/`;
+        // Use GitHub raw.githubusercontent.com domain
+        const fileBaseUrl = githubRaw ? `${githubRaw}${versionPath}/` : `${baseUrl}repository/${versionPath}/`;
         
         currentNode.files.forEach(file => {
           // Format file size
@@ -553,14 +561,14 @@ const githubRepoUrlJson = JSON.stringify(githubRepoUrl);
           code = `<span class="tag">&lt;repository&gt;</span>
   <span class="tag">&lt;id&gt;</span>${repositoryName.toLowerCase().replace(/\s+/g, '-')}<span class="tag">&lt;/id&gt;</span>
   <span class="tag">&lt;name&gt;</span>${repositoryName}<span class="tag">&lt;/name&gt;</span>
-  <span class="tag">&lt;url&gt;</span>${repositoryUrl}<span class="tag">&lt;/url&gt;</span>
+  <span class="tag">&lt;url&gt;</span>${mavenRepoUrl}<span class="tag">&lt;/url&gt;</span>
 <span class="tag">&lt;/repository&gt;</span>`;
         } else if (tabName === 'Gradle Kotlin') {
-          code = `<span class="function">maven</span>(<span class="string">"${repositoryUrl}"</span>) {
+          code = `<span class="function">maven</span>(<span class="string">"${mavenRepoUrl}"</span>) {
   name = <span class="string">"${repositoryName}"</span>
 }`;
         } else if (tabName === 'Gradle Groovy') {
-          code = `<span class="function">maven</span>(<span class="string">"${repositoryUrl}"</span>) {
+          code = `<span class="function">maven</span>(<span class="string">"${mavenRepoUrl}"</span>) {
   name <span class="string">"${repositoryName}"</span>
 }`;
         }
