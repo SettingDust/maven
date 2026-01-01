@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <groupId>earth.terrarium</groupId>
-  <artifactId>cloche</artifactId>
+  <groupId>earth.terrarium.cloche</groupId>
+  <artifactId>earth.terrarium.cloche.gradle.plugin</artifactId>
   <versioning>
     <latest>0.17.4-dust</latest>
     <release>0.17.4-dust</release>
     <versions>
       <version>0.17.4-dust</version>
     </versions>
-    <lastUpdated>20260101163345</lastUpdated>
+    <lastUpdated>20260101163332</lastUpdated>
   </versioning>
 </metadata>
