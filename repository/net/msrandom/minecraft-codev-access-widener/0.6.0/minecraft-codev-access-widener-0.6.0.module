@@ -1,0 +1,156 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "net.msrandom",
+    "module": "minecraft-codev-access-widener",
+    "version": "0.6.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "net.fabricmc",
+          "module": "access-widener",
+          "version": {
+            "requires": "2.1.0"
+          }
+        },
+        {
+          "group": "org.cadixdev",
+          "module": "at",
+          "version": {
+            "requires": "0.1.0-rc1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "minecraft-codev-access-widener-0.6.0.jar",
+          "url": "minecraft-codev-access-widener-0.6.0.jar",
+          "size": 72036,
+          "sha512": "e249817cb426f7aec35159f2b65025323e0ac554f55352d8567d489d2d444075ec64d1d23ff2ac6eab2e51a62a89ed09924220cf124b29a0a686443436885b64",
+          "sha256": "17f93113405111a35fa1fa72f1259d5df704d409a25894e5adf92c1e1a9917fd",
+          "sha1": "df3a2817a6ebb1d566c1ee22ae7c6f6edf8bd5f4",
+          "md5": "39651765f14fb9c37223c1d5f0732ebd"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib"
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-core",
+          "version": {
+            "requires": "0.6.6"
+          }
+        },
+        {
+          "group": "net.fabricmc",
+          "module": "access-widener",
+          "version": {
+            "requires": "2.1.0"
+          }
+        },
+        {
+          "group": "org.cadixdev",
+          "module": "at",
+          "version": {
+            "requires": "0.1.0-rc1"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "minecraft-codev-access-widener-0.6.0.jar",
+          "url": "minecraft-codev-access-widener-0.6.0.jar",
+          "size": 72036,
+          "sha512": "e249817cb426f7aec35159f2b65025323e0ac554f55352d8567d489d2d444075ec64d1d23ff2ac6eab2e51a62a89ed09924220cf124b29a0a686443436885b64",
+          "sha256": "17f93113405111a35fa1fa72f1259d5df704d409a25894e5adf92c1e1a9917fd",
+          "sha1": "df3a2817a6ebb1d566c1ee22ae7c6f6edf8bd5f4",
+          "md5": "39651765f14fb9c37223c1d5f0732ebd"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "minecraft-codev-access-widener-0.6.0-sources.jar",
+          "url": "minecraft-codev-access-widener-0.6.0-sources.jar",
+          "size": 7468,
+          "sha512": "18a771be682c9f7659657237a7b3a5d689d36203bd35cfd5ebbe37d2acac4aa163461787608fc5849db8f8a7eb9db59160aced59cd6cc468b223eb7a1ffd8f4f",
+          "sha256": "929652c1bd6319bbbe2b2210157e3ee825644cc1871f709a68ec473be3b5b5c8",
+          "sha1": "1be584eda2c1ea187b9b99a17cc5c85846e4cb57",
+          "md5": "d45845ca4c4af5d2d2f23d57467ff84e"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "minecraft-codev-access-widener-0.6.0-javadoc.jar",
+          "url": "minecraft-codev-access-widener-0.6.0-javadoc.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

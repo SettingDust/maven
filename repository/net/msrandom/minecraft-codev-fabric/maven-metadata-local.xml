@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>net.msrandom</groupId>
+  <artifactId>minecraft-codev-fabric</artifactId>
+  <versioning>
+    <latest>0.6.11-dust</latest>
+    <release>0.6.11-dust</release>
+    <versions>
+      <version>0.6.11-dust</version>
+    </versions>
+    <lastUpdated>20260101090722</lastUpdated>
+  </versioning>
+</metadata>

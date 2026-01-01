@@ -1,0 +1,203 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "net.msrandom",
+    "module": "minecraft-codev-forge",
+    "version": "0.7.1-dust",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "minecraft-codev-forge-0.7.1-dust.jar",
+          "url": "minecraft-codev-forge-0.7.1-dust.jar",
+          "size": 273877,
+          "sha512": "e945d566af52c5e942c2fe793a2fc30333abafbd7705ff74e1daf007da2a08158d44f0a1ea5744a142fa0fec9a4880783aaada068c3896a4c18c2809bf451853",
+          "sha256": "ea6a94bafb5331b5409421ffac7f9f9bcd2178e3204e41d0f9a73c76effec5dc",
+          "sha1": "4bcb95ccd37c6bba2f2c5a8adbc90f6a9ed62af0",
+          "md5": "0d09942d8a72b9132ab2838f72cf2b0c"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib"
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-core",
+          "version": {
+            "requires": "1.2.4"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-core-serialization",
+          "version": {
+            "requires": "1.2.4"
+          }
+        },
+        {
+          "group": "net.neoforged.accesstransformers",
+          "module": "at-cli",
+          "version": {
+            "requires": "13.0.3"
+          }
+        },
+        {
+          "group": "org.cadixdev",
+          "module": "lorenz",
+          "version": {
+            "requires": "0.5.8"
+          }
+        },
+        {
+          "group": "de.siegmar",
+          "module": "fastcsv",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.apache.logging.log4j",
+          "module": "log4j-core",
+          "version": {
+            "requires": "2.12.4"
+          }
+        },
+        {
+          "group": "com.electronwill.night-config",
+          "module": "toml",
+          "version": {
+            "requires": "3.6.0"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-access-widener",
+          "version": {
+            "requires": "0.6.0"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-remapper",
+          "version": {
+            "requires": "0.6.8-dust"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-runs",
+          "version": {
+            "requires": "0.6.7"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-mixins",
+          "version": {
+            "requires": "0.6.0"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-includes",
+          "version": {
+            "requires": "0.6.5-dust"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "minecraft-codev-forge-0.7.1-dust.jar",
+          "url": "minecraft-codev-forge-0.7.1-dust.jar",
+          "size": 273877,
+          "sha512": "e945d566af52c5e942c2fe793a2fc30333abafbd7705ff74e1daf007da2a08158d44f0a1ea5744a142fa0fec9a4880783aaada068c3896a4c18c2809bf451853",
+          "sha256": "ea6a94bafb5331b5409421ffac7f9f9bcd2178e3204e41d0f9a73c76effec5dc",
+          "sha1": "4bcb95ccd37c6bba2f2c5a8adbc90f6a9ed62af0",
+          "md5": "0d09942d8a72b9132ab2838f72cf2b0c"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "minecraft-codev-forge-0.7.1-dust-sources.jar",
+          "url": "minecraft-codev-forge-0.7.1-dust-sources.jar",
+          "size": 34765,
+          "sha512": "7f5eb4b22e6fce62199caa6a84839d517589b8b9041da37c8cf655764e7d91c4f98bcc803fd6abc8644fb595e885f1fe268c8a3034a602d1320b38d6cc62e851",
+          "sha256": "665dce3840fa2740d5d5b0eebfc8bbbd19a08206c52ef676b30e031cfb4f50b5",
+          "sha1": "4e41b7936b21430b7a23c0d4d1da8b054705e1dd",
+          "md5": "6effd30c956a11c9360696541a7d1b02"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "minecraft-codev-forge-0.7.1-dust-javadoc.jar",
+          "url": "minecraft-codev-forge-0.7.1-dust-javadoc.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

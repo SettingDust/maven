@@ -1,0 +1,100 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "net.msrandom",
+    "module": "side-annotations",
+    "version": "1.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "side-annotations-1.0.1.jar",
+          "url": "side-annotations-1.0.1.jar",
+          "size": 1743,
+          "sha512": "f704dc7c5bbacc3d102d5dd469b04bef0f3ba576fec2b81f70a08532f3e0ec79188a4aa9128a9cb901be3bff7ab41b86552a5cd7385d08fc42eb079ab346c4e5",
+          "sha256": "8e8d9eecb222b30d4ebd8363d90715ff41bfc74b49d021e29a09595214a5923c",
+          "sha1": "7c12d15e2f0a78e2659491ea364469520c8ddf14",
+          "md5": "34bd7effde9a322fc0c553821eaf3957"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "side-annotations-1.0.1.jar",
+          "url": "side-annotations-1.0.1.jar",
+          "size": 1743,
+          "sha512": "f704dc7c5bbacc3d102d5dd469b04bef0f3ba576fec2b81f70a08532f3e0ec79188a4aa9128a9cb901be3bff7ab41b86552a5cd7385d08fc42eb079ab346c4e5",
+          "sha256": "8e8d9eecb222b30d4ebd8363d90715ff41bfc74b49d021e29a09595214a5923c",
+          "sha1": "7c12d15e2f0a78e2659491ea364469520c8ddf14",
+          "md5": "34bd7effde9a322fc0c553821eaf3957"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "side-annotations-1.0.1-sources.jar",
+          "url": "side-annotations-1.0.1-sources.jar",
+          "size": 1543,
+          "sha512": "243833890518fda32e482f33d38e769059194f83c8ff563c6e29d9f06bb8bc40048fa1afbda5c1c292ec7c0765405bf08c3d44e7270507abd3fc07986f5c79fc",
+          "sha256": "64e09e9d4107f6b735648b857adc5a4a8e6393ee28c38878248f2157681f3c87",
+          "sha1": "88cc0339609b64aa886b53da3a7e631bdccef566",
+          "md5": "0dd67d2623f7def56bf80809b44341b5"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "side-annotations-1.0.1-javadoc.jar",
+          "url": "side-annotations-1.0.1-javadoc.jar",
+          "size": 19693,
+          "sha512": "ed3eb7abaff3721aea19de912d28d3ea2772b90def5ac925cafd2d213e350d4238fffe9184dca9083852a9b2caf3e974e84c2b1cc3ddc5f14c1a7355780801cc",
+          "sha256": "7160e258dcc63929886aeeecfee53bde2bc9acc217b7dc84708ebdc1488f5174",
+          "sha1": "bc96d6cf18276f7a55237a48b89502bb8b3eb2a0",
+          "md5": "dae0b9e532bbb655111f85db1124adb4"
+        }
+      ]
+    }
+  ]
+}

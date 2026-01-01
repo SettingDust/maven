@@ -1,0 +1,133 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "net.msrandom",
+    "module": "minecraft-codev-decompiler",
+    "version": "0.6.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "minecraft-codev-decompiler-0.6.0.jar",
+          "url": "minecraft-codev-decompiler-0.6.0.jar",
+          "size": 9883,
+          "sha512": "646e1923e009d90a60741b2cc1289184a3dbabb4dbb8eefb67ee72199833eeb8a3530d1a7ef4dc815027dff6b0f3a2bc0aa43da167a7ab961c0be8a6f89180be",
+          "sha256": "283868f301fabf05828257fa3e964d521dc477ea6a6b521a95bfc0bc86eaff3b",
+          "sha1": "b21d86649936010f3f5f70bd28827677a2e625f0",
+          "md5": "70a9220be8c346c6fd56375820755ad4"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib"
+        },
+        {
+          "group": "org.vineflower",
+          "module": "vineflower",
+          "version": {
+            "requires": "1.10.1"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-core",
+          "version": {
+            "requires": "0.6.6"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "minecraft-codev-decompiler-0.6.0.jar",
+          "url": "minecraft-codev-decompiler-0.6.0.jar",
+          "size": 9883,
+          "sha512": "646e1923e009d90a60741b2cc1289184a3dbabb4dbb8eefb67ee72199833eeb8a3530d1a7ef4dc815027dff6b0f3a2bc0aa43da167a7ab961c0be8a6f89180be",
+          "sha256": "283868f301fabf05828257fa3e964d521dc477ea6a6b521a95bfc0bc86eaff3b",
+          "sha1": "b21d86649936010f3f5f70bd28827677a2e625f0",
+          "md5": "70a9220be8c346c6fd56375820755ad4"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "minecraft-codev-decompiler-0.6.0-sources.jar",
+          "url": "minecraft-codev-decompiler-0.6.0-sources.jar",
+          "size": 2718,
+          "sha512": "39cca26fa6c5896afdf461e9d5407cf38a8e8ae86c72629d925adffc898e31b1735db3af88226d02b478adc5696b95a50e8305ba364a56cefeff1ded8751d24d",
+          "sha256": "5ca763e1ca1061e1595bbb47a0f87efdf6b5b27e60ac01738b0f80bd4f6ff82d",
+          "sha1": "547053f15189dffc584499f2281f8fe483db16ac",
+          "md5": "3d4ee9a0e6fb15f8bc1409c992215366"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "minecraft-codev-decompiler-0.6.0-javadoc.jar",
+          "url": "minecraft-codev-decompiler-0.6.0-javadoc.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}
