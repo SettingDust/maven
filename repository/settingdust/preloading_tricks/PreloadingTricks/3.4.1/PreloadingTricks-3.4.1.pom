@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- This module was also published with a richer model, Gradle metadata,  -->
+  <!-- which should be used instead. Do not delete the following line which  -->
+  <!-- is to indicate to Gradle or any Gradle module metadata file consumer  -->
+  <!-- that they should prefer consuming it instead. -->
+  <!-- do_not_remove: published-with-gradle-metadata -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>settingdust.preloading_tricks</groupId>
+  <artifactId>PreloadingTricks</artifactId>
+  <version>3.4.1</version>
+  <name>preloading_tricks</name>
+  <description>PreloadingTricks</description>
+  <url>https://github.com/SettingDust/PreloadingTricks</url>
+  <licenses>
+    <license>
+      <name>Apache License 2.0</name>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>SettingDust</name>
+    </developer>
+  </developers>
+  <dependencies>
+    <dependency>
+      <groupId>net.lenni0451</groupId>
+      <artifactId>Reflect</artifactId>
+      <version>1.6.1-SNAPSHOT</version>
+      <scope>compile</scope>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>net.lenni0451.classtransform</groupId>
+      <artifactId>core</artifactId>
+      <version>1.15.0-SNAPSHOT</version>
+      <scope>compile</scope>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>net.fabricmc</groupId>
+      <artifactId>fabric-loader</artifactId>
+      <version>0.18.4</version>
+      <scope>runtime</scope>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>net.lenni0451.classtransform</groupId>
+      <artifactId>additionalclassprovider</artifactId>
+      <version>1.15.0-SNAPSHOT</version>
+      <scope>runtime</scope>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>net.lenni0451.classtransform</groupId>
+      <artifactId>mixinstranslator</artifactId>
+      <version>1.15.0-SNAPSHOT</version>
+      <scope>runtime</scope>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>net.bytebuddy</groupId>
+      <artifactId>byte-buddy-agent</artifactId>
+      <version>1.18.2</version>
+      <scope>runtime</scope>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>net.fabricmc.fabric-api</groupId>
+      <artifactId>fabric-api</artifactId>
+      <version>0.92.6+1.20.1</version>
+      <scope>runtime</scope>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+</project>
