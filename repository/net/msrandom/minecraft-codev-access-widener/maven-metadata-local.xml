@@ -3,12 +3,11 @@
   <groupId>net.msrandom</groupId>
   <artifactId>minecraft-codev-access-widener</artifactId>
   <versioning>
-    <latest>0.6.0-dust.0</latest>
-    <release>0.6.0-dust.0</release>
+    <latest>0.6.3</latest>
+    <release>0.6.3</release>
     <versions>
-      <version>0.6.0</version>
-      <version>0.6.0-dust.0</version>
+      <version>0.6.3</version>
     </versions>
-    <lastUpdated>20260123071527</lastUpdated>
+    <lastUpdated>20260327035554</lastUpdated>
   </versioning>
 </metadata>
