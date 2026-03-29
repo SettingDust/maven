@@ -1,0 +1,126 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "net.msrandom",
+    "module": "minecraft-codev-includes",
+    "version": "0.6.5-dust.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "minecraft-codev-includes-0.6.5-dust.0.jar",
+          "url": "minecraft-codev-includes-0.6.5-dust.0.jar",
+          "size": 24735,
+          "sha512": "51d87bfe3482828f5a8ea15a7415c597c9a8ed9b8fd648a67148a2050587032ab9a04d2f5f0196e6ff0a2c62ba2dd01d2916648e892ac8c1d3fafd10d228dc20",
+          "sha256": "a7262bc0ee4defec2879695ecdbb0652319cce217d3600e16d7324fe69707701",
+          "sha1": "57d97b6d640fb396e81f6743b3a5871ef97a94fc",
+          "md5": "a2406d9176508d42a7bbed27c35815b5"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib"
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-core",
+          "version": {
+            "requires": "0.6.9-dust.0"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "minecraft-codev-includes-0.6.5-dust.0.jar",
+          "url": "minecraft-codev-includes-0.6.5-dust.0.jar",
+          "size": 24735,
+          "sha512": "51d87bfe3482828f5a8ea15a7415c597c9a8ed9b8fd648a67148a2050587032ab9a04d2f5f0196e6ff0a2c62ba2dd01d2916648e892ac8c1d3fafd10d228dc20",
+          "sha256": "a7262bc0ee4defec2879695ecdbb0652319cce217d3600e16d7324fe69707701",
+          "sha1": "57d97b6d640fb396e81f6743b3a5871ef97a94fc",
+          "md5": "a2406d9176508d42a7bbed27c35815b5"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "minecraft-codev-includes-0.6.5-dust.0-sources.jar",
+          "url": "minecraft-codev-includes-0.6.5-dust.0-sources.jar",
+          "size": 5588,
+          "sha512": "e547229e37eaf201143967a14245b3aaddbafec11910a194d46a32772461f987aa39b4b1c994f4ea2d6368be88c7ea1afb9a6ac0df23c28fa571b9c854806085",
+          "sha256": "860d18c970abb9d092869affa68b0b8f87b164ab72f55ef6932525d1bfc77ca1",
+          "sha1": "1f9bc96e9895525fde79895f3fa9ab9d191c92db",
+          "md5": "ca1b0b814766e81416329d60f3dc1485"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "minecraft-codev-includes-0.6.5-dust.0-javadoc.jar",
+          "url": "minecraft-codev-includes-0.6.5-dust.0-javadoc.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}
