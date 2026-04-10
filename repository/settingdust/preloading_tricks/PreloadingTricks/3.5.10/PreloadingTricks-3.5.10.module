@@ -34,10 +34,10 @@
           "name": "PreloadingTricks-3.5.10.jar",
           "url": "PreloadingTricks-3.5.10.jar",
           "size": 1781201,
-          "sha512": "7eaa3c65adbb41c9f358c994f4a7f4f94c242c241fda685c340c2ac5192f78b73414ffe0a001bb678dba8293f03ae7ca60c695462ee82fb4036f4634591db2ad",
-          "sha256": "1a69e961341f4941c334dc0135f065cf2d944b1c1fda746e585228b7ea22119c",
-          "sha1": "e28ad42dcf82bcc96679b3d8ca753c871658be91",
-          "md5": "6d9dba7a5bba63bff2e9ae1ced8c9413"
+          "sha512": "3d0362e2a8022024ec6b2a198b0abda126e3c2af1513dad5d86133712214da628c2046d773b69b3fe2442967fa8193c1d092e7e682fb5595b8457136914b219e",
+          "sha256": "af4eff3d6ff06f4ff9b2791c4d0b98a376d62c8ef23e629d097d5872aca9933b",
+          "sha1": "56cf7a627cd7e37abb7ba00a8e4ba05c577fea7a",
+          "md5": "02d402e9031c6da7c72efb1c92a49614"
         }
       ]
     },
@@ -61,10 +61,10 @@
           "name": "PreloadingTricks-3.5.10.jar",
           "url": "PreloadingTricks-3.5.10.jar",
           "size": 1781201,
-          "sha512": "7eaa3c65adbb41c9f358c994f4a7f4f94c242c241fda685c340c2ac5192f78b73414ffe0a001bb678dba8293f03ae7ca60c695462ee82fb4036f4634591db2ad",
-          "sha256": "1a69e961341f4941c334dc0135f065cf2d944b1c1fda746e585228b7ea22119c",
-          "sha1": "e28ad42dcf82bcc96679b3d8ca753c871658be91",
-          "md5": "6d9dba7a5bba63bff2e9ae1ced8c9413"
+          "sha512": "3d0362e2a8022024ec6b2a198b0abda126e3c2af1513dad5d86133712214da628c2046d773b69b3fe2442967fa8193c1d092e7e682fb5595b8457136914b219e",
+          "sha256": "af4eff3d6ff06f4ff9b2791c4d0b98a376d62c8ef23e629d097d5872aca9933b",
+          "sha1": "56cf7a627cd7e37abb7ba00a8e4ba05c577fea7a",
+          "md5": "02d402e9031c6da7c72efb1c92a49614"
         }
       ]
     },
@@ -114,10 +114,10 @@
           "name": "PreloadingTricks-3.5.10-fabric.jar",
           "url": "PreloadingTricks-3.5.10-fabric.jar",
           "size": 836326,
-          "sha512": "bf461f291154b213e9b700cf093b48fdf2fd1d8be52d271086ca595a897956fb5f641b27416dd474549e3ce7130e3ada257bc9a99776eb6ee511a5407f4e469d",
-          "sha256": "f52ce693d0f0a89586d08115390eceed87db97a58639ddf60dcd2ef4f614f358",
-          "sha1": "6ad5802a0cebcde34823767576c7a2139243ec8a",
-          "md5": "a60d29501c75f3a441aa494dfca885e7"
+          "sha512": "98024bfa91060723af9533454286a0de0a382d131361a478a6f90b2ad5c8fec6f66e81d63a6cb2f8764209d5a234211e7f67412cb7e96ca248782049307d58de",
+          "sha256": "b801ef9d3b1cd187bb12c74ea2d0ec5d3f5943530736929f65c2c4a722b6c16f",
+          "sha1": "5b3be5311fc7996a8ba1d9d4b06b278832a007ec",
+          "md5": "6b6fc3fa87c4dadeba5f4fbfba8838af"
         }
       ],
       "capabilities": [
@@ -200,10 +200,10 @@
           "name": "PreloadingTricks-3.5.10-fabric.jar",
           "url": "PreloadingTricks-3.5.10-fabric.jar",
           "size": 836326,
-          "sha512": "bf461f291154b213e9b700cf093b48fdf2fd1d8be52d271086ca595a897956fb5f641b27416dd474549e3ce7130e3ada257bc9a99776eb6ee511a5407f4e469d",
-          "sha256": "f52ce693d0f0a89586d08115390eceed87db97a58639ddf60dcd2ef4f614f358",
-          "sha1": "6ad5802a0cebcde34823767576c7a2139243ec8a",
-          "md5": "a60d29501c75f3a441aa494dfca885e7"
+          "sha512": "98024bfa91060723af9533454286a0de0a382d131361a478a6f90b2ad5c8fec6f66e81d63a6cb2f8764209d5a234211e7f67412cb7e96ca248782049307d58de",
+          "sha256": "b801ef9d3b1cd187bb12c74ea2d0ec5d3f5943530736929f65c2c4a722b6c16f",
+          "sha1": "5b3be5311fc7996a8ba1d9d4b06b278832a007ec",
+          "md5": "6b6fc3fa87c4dadeba5f4fbfba8838af"
         }
       ],
       "capabilities": [
