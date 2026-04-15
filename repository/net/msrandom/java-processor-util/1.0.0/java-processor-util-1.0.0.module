@@ -10,7 +10,7 @@
   },
   "createdBy": {
     "gradle": {
-      "version": "9.1.0"
+      "version": "9.4.1"
     }
   },
   "variants": [
@@ -30,7 +30,7 @@
           "group": "org.jetbrains.kotlin",
           "module": "kotlin-stdlib",
           "version": {
-            "requires": "2.2.0"
+            "requires": "2.3.0"
           }
         }
       ],
@@ -38,11 +38,11 @@
         {
           "name": "java-processor-util-1.0.0.jar",
           "url": "java-processor-util-1.0.0.jar",
-          "size": 14355,
-          "sha512": "8947f805c7986804f2b6e10633108b04fab0fb9ed758955e5fbbbd79cb05349ac84138068c6783b9f3948079ed97a037df589e3c7906d57a3179b6ac05e555bb",
-          "sha256": "7cc036314de5d4c4760fc8050d5a0bcc60099eb96fae6fdad571cb21167d952e",
-          "sha1": "82eac434104fdfdd1f5b3ab37baf6e84f5cd60c4",
-          "md5": "484839d96b149b3c685bd4e8eba0f66b"
+          "size": 14357,
+          "sha512": "271a03721569fa80f3625908bd9dc4625d6d6feac3a35a9b89902532cf3ee1a3d60fddaec8ec36600766f781655ff2f4367bcc7a4eeabcdac95ab875001ccd19",
+          "sha256": "b7f10525e9b9d75abc9fbea3c7edc58858c5460a247272987ed6dc75c987c7af",
+          "sha1": "57d6f5a57cd93c4bc9b38988644c8e161db4a7ef",
+          "md5": "e4a69754eda576884843a3d94ffe1312"
         }
       ]
     },
@@ -62,7 +62,7 @@
           "group": "org.jetbrains.kotlin",
           "module": "kotlin-stdlib",
           "version": {
-            "requires": "2.2.0"
+            "requires": "2.3.0"
           }
         }
       ],
@@ -70,11 +70,11 @@
         {
           "name": "java-processor-util-1.0.0.jar",
           "url": "java-processor-util-1.0.0.jar",
-          "size": 14355,
-          "sha512": "8947f805c7986804f2b6e10633108b04fab0fb9ed758955e5fbbbd79cb05349ac84138068c6783b9f3948079ed97a037df589e3c7906d57a3179b6ac05e555bb",
-          "sha256": "7cc036314de5d4c4760fc8050d5a0bcc60099eb96fae6fdad571cb21167d952e",
-          "sha1": "82eac434104fdfdd1f5b3ab37baf6e84f5cd60c4",
-          "md5": "484839d96b149b3c685bd4e8eba0f66b"
+          "size": 14357,
+          "sha512": "271a03721569fa80f3625908bd9dc4625d6d6feac3a35a9b89902532cf3ee1a3d60fddaec8ec36600766f781655ff2f4367bcc7a4eeabcdac95ab875001ccd19",
+          "sha256": "b7f10525e9b9d75abc9fbea3c7edc58858c5460a247272987ed6dc75c987c7af",
+          "sha1": "57d6f5a57cd93c4bc9b38988644c8e161db4a7ef",
+          "md5": "e4a69754eda576884843a3d94ffe1312"
         }
       ]
     },
@@ -142,7 +142,7 @@
           "group": "org.jetbrains.kotlin",
           "module": "kotlin-stdlib",
           "version": {
-            "requires": "2.2.0"
+            "requires": "2.3.0"
           }
         }
       ],
@@ -150,20 +150,20 @@
         {
           "name": "java-processor-util-1.0.0-java11.jar",
           "url": "java-processor-util-1.0.0-java11.jar",
-          "size": 6721,
-          "sha512": "a1c6804eab28aa107d26c5dfc7e13c781227a3c902bf3d980d38faa49adb3dd1fdaab8ec1e41b6097f04507c4b7842ac49c67e6a62d3c95748904b48e8760f14",
-          "sha256": "0be7ef805114265c16ca48449fed6122dbd8114b138f0c6364ccf09790ecfcb0",
-          "sha1": "0f6acea75416318c3e162559e12125c8bb1a0b24",
-          "md5": "e7b5261c9b19fbfaa5ef9bd8dfadc287"
+          "size": 6746,
+          "sha512": "78903b4acbc4e210163129d8fde3cf17464bbeef28526f2fdcbd23053d2043d8f16362eb50d4c0f06311d2b079e733d56c506a5bdca2b05a24173bee36990056",
+          "sha256": "c05c33d17a38ba5bc38d9fc9e5a0f7ad27ffedf0c6513365d7eef2e8b3b077f9",
+          "sha1": "be9b62f3e1eb23d31710b4dbdb09a5e00df905b9",
+          "md5": "0252ffe032e08135db9d546424e11d51"
         },
         {
           "name": "java-processor-util-1.0.0.jar",
           "url": "java-processor-util-1.0.0.jar",
-          "size": 14355,
-          "sha512": "8947f805c7986804f2b6e10633108b04fab0fb9ed758955e5fbbbd79cb05349ac84138068c6783b9f3948079ed97a037df589e3c7906d57a3179b6ac05e555bb",
-          "sha256": "7cc036314de5d4c4760fc8050d5a0bcc60099eb96fae6fdad571cb21167d952e",
-          "sha1": "82eac434104fdfdd1f5b3ab37baf6e84f5cd60c4",
-          "md5": "484839d96b149b3c685bd4e8eba0f66b"
+          "size": 14357,
+          "sha512": "271a03721569fa80f3625908bd9dc4625d6d6feac3a35a9b89902532cf3ee1a3d60fddaec8ec36600766f781655ff2f4367bcc7a4eeabcdac95ab875001ccd19",
+          "sha256": "b7f10525e9b9d75abc9fbea3c7edc58858c5460a247272987ed6dc75c987c7af",
+          "sha1": "57d6f5a57cd93c4bc9b38988644c8e161db4a7ef",
+          "md5": "e4a69754eda576884843a3d94ffe1312"
         }
       ],
       "capabilities": [
@@ -190,7 +190,7 @@
           "group": "org.jetbrains.kotlin",
           "module": "kotlin-stdlib",
           "version": {
-            "requires": "2.2.0"
+            "requires": "2.3.0"
           }
         }
       ],
@@ -198,20 +198,20 @@
         {
           "name": "java-processor-util-1.0.0-java11.jar",
           "url": "java-processor-util-1.0.0-java11.jar",
-          "size": 6721,
-          "sha512": "a1c6804eab28aa107d26c5dfc7e13c781227a3c902bf3d980d38faa49adb3dd1fdaab8ec1e41b6097f04507c4b7842ac49c67e6a62d3c95748904b48e8760f14",
-          "sha256": "0be7ef805114265c16ca48449fed6122dbd8114b138f0c6364ccf09790ecfcb0",
-          "sha1": "0f6acea75416318c3e162559e12125c8bb1a0b24",
-          "md5": "e7b5261c9b19fbfaa5ef9bd8dfadc287"
+          "size": 6746,
+          "sha512": "78903b4acbc4e210163129d8fde3cf17464bbeef28526f2fdcbd23053d2043d8f16362eb50d4c0f06311d2b079e733d56c506a5bdca2b05a24173bee36990056",
+          "sha256": "c05c33d17a38ba5bc38d9fc9e5a0f7ad27ffedf0c6513365d7eef2e8b3b077f9",
+          "sha1": "be9b62f3e1eb23d31710b4dbdb09a5e00df905b9",
+          "md5": "0252ffe032e08135db9d546424e11d51"
         },
         {
           "name": "java-processor-util-1.0.0.jar",
           "url": "java-processor-util-1.0.0.jar",
-          "size": 14355,
-          "sha512": "8947f805c7986804f2b6e10633108b04fab0fb9ed758955e5fbbbd79cb05349ac84138068c6783b9f3948079ed97a037df589e3c7906d57a3179b6ac05e555bb",
-          "sha256": "7cc036314de5d4c4760fc8050d5a0bcc60099eb96fae6fdad571cb21167d952e",
-          "sha1": "82eac434104fdfdd1f5b3ab37baf6e84f5cd60c4",
-          "md5": "484839d96b149b3c685bd4e8eba0f66b"
+          "size": 14357,
+          "sha512": "271a03721569fa80f3625908bd9dc4625d6d6feac3a35a9b89902532cf3ee1a3d60fddaec8ec36600766f781655ff2f4367bcc7a4eeabcdac95ab875001ccd19",
+          "sha256": "b7f10525e9b9d75abc9fbea3c7edc58858c5460a247272987ed6dc75c987c7af",
+          "sha1": "57d6f5a57cd93c4bc9b38988644c8e161db4a7ef",
+          "md5": "e4a69754eda576884843a3d94ffe1312"
         }
       ],
       "capabilities": [

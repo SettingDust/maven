@@ -10,7 +10,7 @@
   },
   "createdBy": {
     "gradle": {
-      "version": "9.1.0"
+      "version": "9.4.1"
     }
   },
   "variants": [
@@ -29,11 +29,11 @@
         {
           "name": "class-extensions-gradle-plugin-1.0.12.jar",
           "url": "class-extensions-gradle-plugin-1.0.12.jar",
-          "size": 4303,
-          "sha512": "3db6d9c17325b96c023dd27e5345f3e2d4a3e534e66757d3ac7eb0a9de3882eac558b86e3fcbb4b617da3330a2b2cf8da5c5fdf872a1a42985e36a868eb01341",
-          "sha256": "aa6e5bba3d7b509ef7dfbed0db66994aeb6658613ca7b7c3762d72316a98b466",
-          "sha1": "8158b7882a714473c27638e90553dc7d427d460e",
-          "md5": "cef6b3c7896346e7fdd8e8f469f78b97"
+          "size": 4561,
+          "sha512": "ac54e1bdf5c377e9df9830748f7e78eeb44ef992a00f8a77bdc6c766b016c5bbef29410f7fbd5ebce3764fb51a53010bb944d00b611336b64e63a01bf497aff1",
+          "sha256": "d98b4d7635d08e97d3ec2056bcaf746b0230cb0e98f3199c9b90c03febd282dc",
+          "sha1": "508345ff8819db26cf3c48f4f48970a725b851bd",
+          "md5": "da6cfa7a2cb69de11fc036c2daa7c61f"
         }
       ]
     },
@@ -52,11 +52,11 @@
         {
           "name": "class-extensions-gradle-plugin-1.0.12.jar",
           "url": "class-extensions-gradle-plugin-1.0.12.jar",
-          "size": 4303,
-          "sha512": "3db6d9c17325b96c023dd27e5345f3e2d4a3e534e66757d3ac7eb0a9de3882eac558b86e3fcbb4b617da3330a2b2cf8da5c5fdf872a1a42985e36a868eb01341",
-          "sha256": "aa6e5bba3d7b509ef7dfbed0db66994aeb6658613ca7b7c3762d72316a98b466",
-          "sha1": "8158b7882a714473c27638e90553dc7d427d460e",
-          "md5": "cef6b3c7896346e7fdd8e8f469f78b97"
+          "size": 4561,
+          "sha512": "ac54e1bdf5c377e9df9830748f7e78eeb44ef992a00f8a77bdc6c766b016c5bbef29410f7fbd5ebce3764fb51a53010bb944d00b611336b64e63a01bf497aff1",
+          "sha256": "d98b4d7635d08e97d3ec2056bcaf746b0230cb0e98f3199c9b90c03febd282dc",
+          "sha1": "508345ff8819db26cf3c48f4f48970a725b851bd",
+          "md5": "da6cfa7a2cb69de11fc036c2daa7c61f"
         }
       ]
     },

@@ -10,7 +10,7 @@
   },
   "createdBy": {
     "gradle": {
-      "version": "9.1.0"
+      "version": "9.4.1"
     }
   },
   "variants": [
@@ -30,7 +30,7 @@
           "group": "org.jetbrains.kotlin",
           "module": "kotlin-stdlib",
           "version": {
-            "requires": "2.2.0"
+            "requires": "2.3.0"
           }
         }
       ],
@@ -38,11 +38,11 @@
         {
           "name": "java-class-extensions-processor-1.0.0.jar",
           "url": "java-class-extensions-processor-1.0.0.jar",
-          "size": 10002,
-          "sha512": "073ae5c6780b96f28a65e80b79f02eb603de2604fec207e2e57100d3691ca714c9ad748372d964a6026dc99eaa2cb9e07761f79aea70f7184820427f9be2d29e",
-          "sha256": "b7c549bb9f4866c3941db5377dc866c9873e40436df94f7a880b12e3ccd28ab4",
-          "sha1": "b73cdad97547854fc4edc8e1204dbe0ef1934753",
-          "md5": "8b5dcd4f16343e78e4d87a58508e4120"
+          "size": 10016,
+          "sha512": "1963a8709abaad48da66e1239f16611bb89ce27452a536656ae02526b9fbddacf919eeed82340a99a1be4c8f40ce4940e48cf001f15854d69422fa8e4f94b8e3",
+          "sha256": "d407e246a268c3fc042ece75ffaa5ed0f7b6ecf4883e74bae0c0c70cde4add99",
+          "sha1": "91630dad18b6ebe7ecc4b74ca636596edda719f4",
+          "md5": "d795fe7418c775364e698c2459ba5b2b"
         }
       ]
     },
@@ -76,7 +76,7 @@
           "group": "org.jetbrains.kotlin",
           "module": "kotlin-stdlib",
           "version": {
-            "requires": "2.2.0"
+            "requires": "2.3.0"
           }
         }
       ],
@@ -84,11 +84,11 @@
         {
           "name": "java-class-extensions-processor-1.0.0.jar",
           "url": "java-class-extensions-processor-1.0.0.jar",
-          "size": 10002,
-          "sha512": "073ae5c6780b96f28a65e80b79f02eb603de2604fec207e2e57100d3691ca714c9ad748372d964a6026dc99eaa2cb9e07761f79aea70f7184820427f9be2d29e",
-          "sha256": "b7c549bb9f4866c3941db5377dc866c9873e40436df94f7a880b12e3ccd28ab4",
-          "sha1": "b73cdad97547854fc4edc8e1204dbe0ef1934753",
-          "md5": "8b5dcd4f16343e78e4d87a58508e4120"
+          "size": 10016,
+          "sha512": "1963a8709abaad48da66e1239f16611bb89ce27452a536656ae02526b9fbddacf919eeed82340a99a1be4c8f40ce4940e48cf001f15854d69422fa8e4f94b8e3",
+          "sha256": "d407e246a268c3fc042ece75ffaa5ed0f7b6ecf4883e74bae0c0c70cde4add99",
+          "sha1": "91630dad18b6ebe7ecc4b74ca636596edda719f4",
+          "md5": "d795fe7418c775364e698c2459ba5b2b"
         }
       ]
     },

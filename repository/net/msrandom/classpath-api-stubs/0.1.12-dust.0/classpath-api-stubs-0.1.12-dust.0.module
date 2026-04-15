@@ -10,7 +10,7 @@
   },
   "createdBy": {
     "gradle": {
-      "version": "9.1.0"
+      "version": "9.4.1"
     }
   },
   "variants": [
@@ -29,11 +29,11 @@
         {
           "name": "classpath-api-stubs-0.1.12-dust.0.jar",
           "url": "classpath-api-stubs-0.1.12-dust.0.jar",
-          "size": 93842,
-          "sha512": "f2c921ed6964e6ac78d930c481993aa540a96e8c84d8eff2c6a19cae777d5289fc6365b1e3ef67d1af5e8bcdc8fa721aa28939a696adb96f534972da0cdd6a2e",
-          "sha256": "1d33a26082f2eb0333ef94298de777430473f55742fb3a8fd6f4b5b97ae6cf36",
-          "sha1": "e4ab08c6048fbe6b825fe492eecd003782a07aae",
-          "md5": "48549a82ea72ce36f2eab8730d52daf7"
+          "size": 93917,
+          "sha512": "e46f3e533a3942d49b9c7d32541f36dbc18266a61a022c59f8c96e651c7a386f6b7c37214d65f892ed3a9f801b07b2bb62b9f5cadcd3cdad226ce2ab617805da",
+          "sha256": "aa342cf93f4af351fe83d78576d1283bc75ef18c612bc2012f68d6184668e75b",
+          "sha1": "ab03fe2c2d6888d316fa4ccd9570396765f9d890",
+          "md5": "a0f73d9c8c90ab3fbc5653a8978acdf5"
         }
       ]
     },
@@ -68,11 +68,11 @@
         {
           "name": "classpath-api-stubs-0.1.12-dust.0.jar",
           "url": "classpath-api-stubs-0.1.12-dust.0.jar",
-          "size": 93842,
-          "sha512": "f2c921ed6964e6ac78d930c481993aa540a96e8c84d8eff2c6a19cae777d5289fc6365b1e3ef67d1af5e8bcdc8fa721aa28939a696adb96f534972da0cdd6a2e",
-          "sha256": "1d33a26082f2eb0333ef94298de777430473f55742fb3a8fd6f4b5b97ae6cf36",
-          "sha1": "e4ab08c6048fbe6b825fe492eecd003782a07aae",
-          "md5": "48549a82ea72ce36f2eab8730d52daf7"
+          "size": 93917,
+          "sha512": "e46f3e533a3942d49b9c7d32541f36dbc18266a61a022c59f8c96e651c7a386f6b7c37214d65f892ed3a9f801b07b2bb62b9f5cadcd3cdad226ce2ab617805da",
+          "sha256": "aa342cf93f4af351fe83d78576d1283bc75ef18c612bc2012f68d6184668e75b",
+          "sha1": "ab03fe2c2d6888d316fa4ccd9570396765f9d890",
+          "md5": "a0f73d9c8c90ab3fbc5653a8978acdf5"
         }
       ]
     },

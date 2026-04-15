@@ -10,7 +10,7 @@
   },
   "createdBy": {
     "gradle": {
-      "version": "9.1.0"
+      "version": "9.4.1"
     }
   },
   "variants": [
@@ -29,11 +29,11 @@
         {
           "name": "jvm-virtual-source-sets-1.3.6.jar",
           "url": "jvm-virtual-source-sets-1.3.6.jar",
-          "size": 51749,
-          "sha512": "78abd66209fb3b9530a17582161b4302f182d615b67e64935583ef91ded910539e86dbb300ac723cfaed6d78558afb1ac032e8d23f9e1049751e9ca7a9d204dc",
-          "sha256": "215a717f740a9ee66b75c1e7fc76cd593cea3ba347d36d4e215533a3f6c9e9b9",
-          "sha1": "9055e525b20f7cbd229d1ca08f41dca3fabf6d91",
-          "md5": "28605da1b7863f636ec3c5c51a1aac16"
+          "size": 51756,
+          "sha512": "f3e016ae0352754c75d7c370c7a119ef9d694b68f9a2dc80fe6ca8c61b68d68531fb41f9062e1308d97ef478ffa5c4fe9b7eb670c1edbefac87c010fbd7c14e6",
+          "sha256": "5ac4a12cda9b00f85101b6d15bd842c16dd9ef7133c1a98e4e98ca24fb8b374e",
+          "sha1": "6f28d241ad591f9511afaafc5cda5b9a57d6b4bd",
+          "md5": "6fc5470ec58f523f810c79accb1b261a"
         }
       ]
     },
@@ -52,11 +52,11 @@
         {
           "name": "jvm-virtual-source-sets-1.3.6.jar",
           "url": "jvm-virtual-source-sets-1.3.6.jar",
-          "size": 51749,
-          "sha512": "78abd66209fb3b9530a17582161b4302f182d615b67e64935583ef91ded910539e86dbb300ac723cfaed6d78558afb1ac032e8d23f9e1049751e9ca7a9d204dc",
-          "sha256": "215a717f740a9ee66b75c1e7fc76cd593cea3ba347d36d4e215533a3f6c9e9b9",
-          "sha1": "9055e525b20f7cbd229d1ca08f41dca3fabf6d91",
-          "md5": "28605da1b7863f636ec3c5c51a1aac16"
+          "size": 51756,
+          "sha512": "f3e016ae0352754c75d7c370c7a119ef9d694b68f9a2dc80fe6ca8c61b68d68531fb41f9062e1308d97ef478ffa5c4fe9b7eb670c1edbefac87c010fbd7c14e6",
+          "sha256": "5ac4a12cda9b00f85101b6d15bd842c16dd9ef7133c1a98e4e98ca24fb8b374e",
+          "sha1": "6f28d241ad591f9511afaafc5cda5b9a57d6b4bd",
+          "md5": "6fc5470ec58f523f810c79accb1b261a"
         }
       ]
     },

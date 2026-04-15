@@ -2,8 +2,8 @@
   "formatVersion": "1.1",
   "component": {
     "group": "net.msrandom",
-    "module": "kmp-actual-stub-annotations",
-    "version": "1.0.0",
+    "module": "kmp-actual-stubs-compiler-plugin",
+    "version": "0.1.2-dust.0",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -36,13 +36,13 @@
       ],
       "files": [
         {
-          "name": "kmp-actual-stub-annotations-1.0.0.jar",
-          "url": "kmp-actual-stub-annotations-1.0.0.jar",
-          "size": 1343,
-          "sha512": "f9a1ef227843fb15406d04d23dfe4ff3096b035638700954c477578af9ba5330abec5e75d3cad5c644e06e24527e3a8a5e1ac53ea2f4b6e72e1485929b534fe9",
-          "sha256": "6ed3e09103432e0160487bd5a0cff5d721a18d5d2ed1187e84ae2d9039f7c063",
-          "sha1": "3ff6d37f0f277189e34f948fcc283f4bb6a52360",
-          "md5": "274fbe925e3340cb654740b140305484"
+          "name": "kmp-actual-stubs-compiler-plugin-0.1.2-dust.0.jar",
+          "url": "kmp-actual-stubs-compiler-plugin-0.1.2-dust.0.jar",
+          "size": 26793,
+          "sha512": "5ad4a4e653bcc039a9dbb4610386092e17193ac15942f954624cb44ed764ef4128a86110dc3775a4b2641f70c61a350a5361cca3be2d8749dd5ff0749e9e71f0",
+          "sha256": "3b57639617634e08659356d2d23d29c06be03c45b7f19eb43ebe974b230f374e",
+          "sha1": "f045ec9342b7f481577113a5b73948be15d5fbc9",
+          "md5": "4523d9adb2690e5fb14e497c6b8dc60d"
         }
       ]
     },
@@ -60,7 +60,20 @@
       "dependencies": [
         {
           "group": "org.jetbrains.kotlin",
+          "module": "kotlin-compiler-embeddable"
+        },
+        {
+          "group": "org.jetbrains.kotlin",
           "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.0"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-compiler-embeddable",
           "version": {
             "requires": "2.3.0"
           }
@@ -68,13 +81,13 @@
       ],
       "files": [
         {
-          "name": "kmp-actual-stub-annotations-1.0.0.jar",
-          "url": "kmp-actual-stub-annotations-1.0.0.jar",
-          "size": 1343,
-          "sha512": "f9a1ef227843fb15406d04d23dfe4ff3096b035638700954c477578af9ba5330abec5e75d3cad5c644e06e24527e3a8a5e1ac53ea2f4b6e72e1485929b534fe9",
-          "sha256": "6ed3e09103432e0160487bd5a0cff5d721a18d5d2ed1187e84ae2d9039f7c063",
-          "sha1": "3ff6d37f0f277189e34f948fcc283f4bb6a52360",
-          "md5": "274fbe925e3340cb654740b140305484"
+          "name": "kmp-actual-stubs-compiler-plugin-0.1.2-dust.0.jar",
+          "url": "kmp-actual-stubs-compiler-plugin-0.1.2-dust.0.jar",
+          "size": 26793,
+          "sha512": "5ad4a4e653bcc039a9dbb4610386092e17193ac15942f954624cb44ed764ef4128a86110dc3775a4b2641f70c61a350a5361cca3be2d8749dd5ff0749e9e71f0",
+          "sha256": "3b57639617634e08659356d2d23d29c06be03c45b7f19eb43ebe974b230f374e",
+          "sha1": "f045ec9342b7f481577113a5b73948be15d5fbc9",
+          "md5": "4523d9adb2690e5fb14e497c6b8dc60d"
         }
       ]
     }
