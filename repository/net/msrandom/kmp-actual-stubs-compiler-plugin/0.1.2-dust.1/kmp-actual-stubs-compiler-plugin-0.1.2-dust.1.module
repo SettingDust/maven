@@ -1,0 +1,95 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "net.msrandom",
+    "module": "kmp-actual-stubs-compiler-plugin",
+    "version": "0.1.2-dust.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.4.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmp-actual-stubs-compiler-plugin-0.1.2-dust.1.jar",
+          "url": "kmp-actual-stubs-compiler-plugin-0.1.2-dust.1.jar",
+          "size": 38889,
+          "sha512": "50d2b8dd90b221fce12d830966f4e9c0d750b1708194ff1642b221a3e1de7809f37b799a4e9532468a36f6693d41a1dbb930d91797962f45c84fdea872b10b43",
+          "sha256": "34820b524aa1c6692ba411aebb72a7bb579707389cfa0a28c01248aa92c22acd",
+          "sha1": "de1084a7d97346634f503a6f2d42695cc1ff4561",
+          "md5": "121fdbf6d23dc8d188657d17361b64c1"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-compiler-embeddable"
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.0"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-compiler-embeddable",
+          "version": {
+            "requires": "2.3.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmp-actual-stubs-compiler-plugin-0.1.2-dust.1.jar",
+          "url": "kmp-actual-stubs-compiler-plugin-0.1.2-dust.1.jar",
+          "size": 38889,
+          "sha512": "50d2b8dd90b221fce12d830966f4e9c0d750b1708194ff1642b221a3e1de7809f37b799a4e9532468a36f6693d41a1dbb930d91797962f45c84fdea872b10b43",
+          "sha256": "34820b524aa1c6692ba411aebb72a7bb579707389cfa0a28c01248aa92c22acd",
+          "sha1": "de1084a7d97346634f503a6f2d42695cc1ff4561",
+          "md5": "121fdbf6d23dc8d188657d17361b64c1"
+        }
+      ]
+    }
+  ]
+}
