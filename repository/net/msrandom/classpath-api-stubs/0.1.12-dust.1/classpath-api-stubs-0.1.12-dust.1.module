@@ -1,0 +1,100 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "net.msrandom",
+    "module": "classpath-api-stubs",
+    "version": "0.1.12-dust.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.4.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "classpath-api-stubs-0.1.12-dust.1.jar",
+          "url": "classpath-api-stubs-0.1.12-dust.1.jar",
+          "size": 94857,
+          "sha512": "5aefdb04164350c3690afe4b54145ebb79f2e62f71aa5a31005fecba675ec1f3461d583ccf795d613629c59dad12b8441202145ed1869591de0913e566a549ee",
+          "sha256": "ee524d24a0d90812a189b4698ce3ae56c2ca4d03576a18313219ce50a4adc95e",
+          "sha1": "83f3d56bc0ac8343930036af1475e088443c78d7",
+          "md5": "834304c69d77adabe322954668433cd5"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.ow2.asm",
+          "module": "asm-tree",
+          "version": {
+            "requires": "9.7.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.8.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "classpath-api-stubs-0.1.12-dust.1.jar",
+          "url": "classpath-api-stubs-0.1.12-dust.1.jar",
+          "size": 94857,
+          "sha512": "5aefdb04164350c3690afe4b54145ebb79f2e62f71aa5a31005fecba675ec1f3461d583ccf795d613629c59dad12b8441202145ed1869591de0913e566a549ee",
+          "sha256": "ee524d24a0d90812a189b4698ce3ae56c2ca4d03576a18313219ce50a4adc95e",
+          "sha1": "83f3d56bc0ac8343930036af1475e088443c78d7",
+          "md5": "834304c69d77adabe322954668433cd5"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "classpath-api-stubs-0.1.12-dust.1-sources.jar",
+          "url": "classpath-api-stubs-0.1.12-dust.1-sources.jar",
+          "size": 14832,
+          "sha512": "f9e59a1ae8cbca86e56202f3c7eb4fad8963cfbfcaac0daccdcf046135d3c1d226ec13b5585477a1d5fd468a6ce4d6be7e9a0f152caae4ef58e1bb74f451b6ad",
+          "sha256": "7b7f26a66d612c4fd5048bb7516ac8712e130d2d154bd38e592dc91e9e9826f7",
+          "sha1": "250740364a24317ac99af02be8ff976eb175ec12",
+          "md5": "8f6c2d73f3d811e2012bb1f51b58af37"
+        }
+      ]
+    }
+  ]
+}
