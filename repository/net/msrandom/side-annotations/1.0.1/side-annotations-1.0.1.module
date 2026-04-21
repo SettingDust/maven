@@ -89,10 +89,10 @@
           "name": "side-annotations-1.0.1-javadoc.jar",
           "url": "side-annotations-1.0.1-javadoc.jar",
           "size": 19693,
-          "sha512": "ed3eb7abaff3721aea19de912d28d3ea2772b90def5ac925cafd2d213e350d4238fffe9184dca9083852a9b2caf3e974e84c2b1cc3ddc5f14c1a7355780801cc",
-          "sha256": "7160e258dcc63929886aeeecfee53bde2bc9acc217b7dc84708ebdc1488f5174",
-          "sha1": "bc96d6cf18276f7a55237a48b89502bb8b3eb2a0",
-          "md5": "dae0b9e532bbb655111f85db1124adb4"
+          "sha512": "22421a6b3f1aed0f6b8f236ffcaf762b67d1582f56866e6d0b71f78adb703fcfebab2a2b436fd8bc9c7f4145bc4eb7d54e73b3b8d246f6d1fcd2647358b66eba",
+          "sha256": "a4255a8d8684fcc7ebeeb718ca6016f899b425bc9242b35b2c3eecc99806aa95",
+          "sha1": "3e376ed216d784b9b9892c9a036554f51288340a",
+          "md5": "b18da907a492fc3999a7412770ba55cc"
         }
       ]
     }

@@ -106,7 +106,7 @@
           "group": "net.msrandom",
           "module": "minecraft-codev-access-widener",
           "version": {
-            "requires": "0.6.3-dust.1"
+            "requires": "0.6.3-dust.2"
           }
         },
         {
