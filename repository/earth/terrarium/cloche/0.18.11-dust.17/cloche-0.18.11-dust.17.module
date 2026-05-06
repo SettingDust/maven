@@ -1,0 +1,224 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "earth.terrarium",
+    "module": "cloche",
+    "version": "0.18.11-dust.17",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.4.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "cloche-0.18.11-dust.17.jar",
+          "url": "cloche-0.18.11-dust.17.jar",
+          "size": 1138880,
+          "sha512": "0527b2f7cd1ae43040bd04545cc042a51fb4f02ea6d9bd489d27a678f103e1cc25261729943c6b1b37128607ba9b2db51d5043aa698f79be1bd865fc721c91c8",
+          "sha256": "06c0c6395faf49e11e031a8da32635c79f94e4ab4b1b944c822fca9cf253b126",
+          "sha1": "51192b9c230a07b7a36b9fa1b4e62b58c854ba61",
+          "md5": "8a228ffdc5ee066d1470134f1c0639d1"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-core",
+          "version": {
+            "requires": "0.6.9-dust.1"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-forge",
+          "version": {
+            "requires": "0.8.4-dust.0"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-fabric",
+          "version": {
+            "requires": "0.7.0-dust.2"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-mixins",
+          "version": {
+            "requires": "0.6.1-dust.1"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-runs",
+          "version": {
+            "requires": "0.6.8-dust.1"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-access-widener",
+          "version": {
+            "requires": "0.6.3-dust.3"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-remapper",
+          "version": {
+            "requires": "0.7.1-dust.2"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-decompiler",
+          "version": {
+            "requires": "0.6.0-dust.1"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-includes",
+          "version": {
+            "requires": "0.6.5-dust.1"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "class-extensions-gradle-plugin",
+          "version": {
+            "requires": "1.0.12"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "jvm-virtual-source-sets",
+          "version": {
+            "requires": "1.3.6-dust.0"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "classpath-api-stubs",
+          "version": {
+            "requires": "0.1.12-dust.4"
+          }
+        },
+        {
+          "group": "net.peanuuutz.tomlkt",
+          "module": "tomlkt",
+          "version": {
+            "requires": "0.5.0"
+          }
+        },
+        {
+          "group": "org.apache.groovy",
+          "module": "groovy-toml",
+          "version": {
+            "requires": "5.0.2"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-lang3",
+          "version": {
+            "requires": "3.18.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin"
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "2.3.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "cloche-0.18.11-dust.17.jar",
+          "url": "cloche-0.18.11-dust.17.jar",
+          "size": 1138880,
+          "sha512": "0527b2f7cd1ae43040bd04545cc042a51fb4f02ea6d9bd489d27a678f103e1cc25261729943c6b1b37128607ba9b2db51d5043aa698f79be1bd865fc721c91c8",
+          "sha256": "06c0c6395faf49e11e031a8da32635c79f94e4ab4b1b944c822fca9cf253b126",
+          "sha1": "51192b9c230a07b7a36b9fa1b4e62b58c854ba61",
+          "md5": "8a228ffdc5ee066d1470134f1c0639d1"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "cloche-0.18.11-dust.17-javadoc.jar",
+          "url": "cloche-0.18.11-dust.17-javadoc.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "cloche-0.18.11-dust.17-sources.jar",
+          "url": "cloche-0.18.11-dust.17-sources.jar",
+          "size": 86391,
+          "sha512": "ecd8acbe1bc15a31b771371f40e5edb87623a26267c1c48247ffd8bc2c9dec517747a9288f9942279b806fb9875ac05428fdf9fa3a349b407465fa1329766c0f",
+          "sha256": "a8ab86437fc6939043a9cf3711856ef774f9211c3cbfa2f7d9b331a5217797de",
+          "sha1": "995fd603e6b67ad3b3a5a7359991833bb4f64eb3",
+          "md5": "c6017b3bdaf96958c46c8ffbc3711600"
+        }
+      ]
+    }
+  ]
+}
