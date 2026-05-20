@@ -1,0 +1,913 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "settingdust.preloading_tricks",
+    "module": "PreloadingTricks",
+    "version": "3.6.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "earth.terrarium.cloche.data": false,
+        "earth.terrarium.cloche.modLoader": "common",
+        "earth.terrarium.cloche.side": "Common",
+        "earth.terrarium.cloche.version": "0.18.11-dust.18",
+        "io.github.mcgradleconventions.distribution": "common",
+        "io.github.mcgradleconventions.loader": "common",
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      }
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "earth.terrarium.cloche.data": false,
+        "earth.terrarium.cloche.modLoader": "common",
+        "earth.terrarium.cloche.side": "Common",
+        "earth.terrarium.cloche.version": "0.18.11-dust.18",
+        "io.github.mcgradleconventions.distribution": "common",
+        "io.github.mcgradleconventions.loader": "common",
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "PreloadingTricks-3.6.1.jar",
+          "url": "PreloadingTricks-3.6.1.jar",
+          "size": 969015,
+          "sha512": "f7aabbe6500cb30b9714ac79a23278d088cde9488bfeee748134336ccf93fa69fb6a3554989d250282a62ecb9610202abe9e67c140832640473d6d435770303a",
+          "sha256": "66f1854753f930c8ba410a48fc01045adca5fdc2fdd4606db82a3a95b2b853b0",
+          "sha1": "585d2ec329a8a87f6ca88f563e84310c12c47992",
+          "md5": "6227172797680213461ce13c0b25ca1d"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElementsRemapped",
+      "attributes": {
+        "earth.terrarium.cloche.data": false,
+        "earth.terrarium.cloche.modLoader": "common",
+        "earth.terrarium.cloche.remapNamespace": "none",
+        "earth.terrarium.cloche.remapped": true,
+        "earth.terrarium.cloche.side": "Common",
+        "earth.terrarium.cloche.version": "0.18.11-dust.18",
+        "io.github.mcgradleconventions.distribution": "common",
+        "io.github.mcgradleconventions.loader": "common",
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "PreloadingTricks-3.6.1-dev.jar",
+          "url": "PreloadingTricks-3.6.1-dev.jar",
+          "size": 969015,
+          "sha512": "f7aabbe6500cb30b9714ac79a23278d088cde9488bfeee748134336ccf93fa69fb6a3554989d250282a62ecb9610202abe9e67c140832640473d6d435770303a",
+          "sha256": "66f1854753f930c8ba410a48fc01045adca5fdc2fdd4606db82a3a95b2b853b0",
+          "sha1": "585d2ec329a8a87f6ca88f563e84310c12c47992",
+          "md5": "6227172797680213461ce13c0b25ca1d"
+        }
+      ]
+    },
+    {
+      "name": "platformFabricApiElements",
+      "attributes": {
+        "earth.terrarium.cloche.data": false,
+        "earth.terrarium.cloche.minecraftVersion": "1.20.1",
+        "earth.terrarium.cloche.modLoader": "fabric",
+        "earth.terrarium.cloche.side": "Client",
+        "earth.terrarium.cloche.version": "0.18.11-dust.18",
+        "io.github.mcgradleconventions.distribution": "client",
+        "io.github.mcgradleconventions.loader": "fabric",
+        "io.github.mcgradleconventions.version": "1.20.1",
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "net.lenni0451",
+          "module": "Reflect",
+          "version": {
+            "requires": "1.6.3"
+          }
+        },
+        {
+          "group": "net.lenni0451.classtransform",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "net.bytebuddy",
+          "module": "byte-buddy-agent",
+          "version": {
+            "requires": "1.18.8"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "PreloadingTricks-3.6.1-platform-fabric.jar",
+          "url": "PreloadingTricks-3.6.1-platform-fabric.jar",
+          "size": 835729,
+          "sha512": "a79db03c647738c7ccfd1908295f089707b3e190ea17ac0b8e630c1a4a8925503210d0f9428f656aa5b3e70f34a18f51ad3e6c4470859ee2b3f06f6e17e5db57",
+          "sha256": "8e9417213b90372e2fe2008864482746652815c110d2598e55e49d6a055ff68b",
+          "sha1": "64d6d8aabee67a2ac28d6d107f89ff236299d69a",
+          "md5": "1d52e26d19a6600eef91b5b595257b89"
+        }
+      ],
+      "capabilities": [
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks-platform-fabric",
+          "version": "3.6.1"
+        },
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks",
+          "version": "3.6.1"
+        }
+      ]
+    },
+    {
+      "name": "platformFabricRuntimeElements",
+      "attributes": {
+        "earth.terrarium.cloche.data": false,
+        "earth.terrarium.cloche.minecraftVersion": "1.20.1",
+        "earth.terrarium.cloche.modLoader": "fabric",
+        "earth.terrarium.cloche.side": "Client",
+        "earth.terrarium.cloche.version": "0.18.11-dust.18",
+        "io.github.mcgradleconventions.distribution": "client",
+        "io.github.mcgradleconventions.loader": "fabric",
+        "io.github.mcgradleconventions.version": "1.20.1",
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "net.fabricmc",
+          "module": "fabric-loader",
+          "version": {
+            "requires": "0.19.2"
+          }
+        },
+        {
+          "group": "net.lenni0451.classtransform",
+          "module": "additionalclassprovider",
+          "version": {
+            "requires": "1.15.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "net.lenni0451.classtransform",
+          "module": "mixinstranslator",
+          "version": {
+            "requires": "1.15.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "net.lenni0451",
+          "module": "Reflect",
+          "version": {
+            "requires": "1.6.3"
+          }
+        },
+        {
+          "group": "net.lenni0451.classtransform",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "net.bytebuddy",
+          "module": "byte-buddy-agent",
+          "version": {
+            "requires": "1.18.8"
+          }
+        },
+        {
+          "group": "net.fabricmc.fabric-api",
+          "module": "fabric-api",
+          "version": {
+            "requires": "0.92.7+1.20.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "PreloadingTricks-3.6.1-platform-fabric.jar",
+          "url": "PreloadingTricks-3.6.1-platform-fabric.jar",
+          "size": 835729,
+          "sha512": "a79db03c647738c7ccfd1908295f089707b3e190ea17ac0b8e630c1a4a8925503210d0f9428f656aa5b3e70f34a18f51ad3e6c4470859ee2b3f06f6e17e5db57",
+          "sha256": "8e9417213b90372e2fe2008864482746652815c110d2598e55e49d6a055ff68b",
+          "sha1": "64d6d8aabee67a2ac28d6d107f89ff236299d69a",
+          "md5": "1d52e26d19a6600eef91b5b595257b89"
+        }
+      ],
+      "capabilities": [
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks-platform-fabric",
+          "version": "3.6.1"
+        },
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks",
+          "version": "3.6.1"
+        }
+      ]
+    },
+    {
+      "name": "platformForgeModlauncherApiElements",
+      "attributes": {
+        "earth.terrarium.cloche.data": false,
+        "earth.terrarium.cloche.minecraftVersion": "1.20.1",
+        "earth.terrarium.cloche.modLoader": "forge",
+        "earth.terrarium.cloche.side": "Client",
+        "earth.terrarium.cloche.version": "0.18.11-dust.18",
+        "io.github.mcgradleconventions.distribution": "client",
+        "io.github.mcgradleconventions.loader": "forge",
+        "io.github.mcgradleconventions.version": "1.20.1",
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "net.lenni0451",
+          "module": "Reflect",
+          "version": {
+            "requires": "1.6.3"
+          }
+        },
+        {
+          "group": "net.lenni0451.classtransform",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "PreloadingTricks-3.6.1-platform-forge-modlauncher.jar",
+          "url": "PreloadingTricks-3.6.1-platform-forge-modlauncher.jar",
+          "size": 895909,
+          "sha512": "3121bb9fc2fe3d52b65e986d27e9e08d952f0e8000054d4171d725946e8038aee8effaa907bca318c9e678c222b858a533c8cb8a2f1f2bc3c12ba6b748b29621",
+          "sha256": "28afa29bd64eb3c6afd032eb765b35406a3433622fb0bca19443b81b2ce05a45",
+          "sha1": "a891e9f98a62e2aa6c28dca86bba2078053f7dd3",
+          "md5": "10a305ab20a33ad9398911c9c423d329"
+        }
+      ],
+      "capabilities": [
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks-platform-forge-modlauncher",
+          "version": "3.6.1"
+        },
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks",
+          "version": "3.6.1"
+        }
+      ]
+    },
+    {
+      "name": "platformForgeModlauncherRuntimeElements",
+      "attributes": {
+        "earth.terrarium.cloche.data": false,
+        "earth.terrarium.cloche.minecraftVersion": "1.20.1",
+        "earth.terrarium.cloche.modLoader": "forge",
+        "earth.terrarium.cloche.side": "Client",
+        "earth.terrarium.cloche.version": "0.18.11-dust.18",
+        "io.github.mcgradleconventions.distribution": "client",
+        "io.github.mcgradleconventions.loader": "forge",
+        "io.github.mcgradleconventions.version": "1.20.1",
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.llamalad7",
+          "module": "mixinextras-common",
+          "version": {
+            "requires": "0.5.4"
+          }
+        },
+        {
+          "group": "net.lenni0451.classtransform",
+          "module": "additionalclassprovider",
+          "version": {
+            "requires": "1.15.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "net.lenni0451.classtransform",
+          "module": "mixinstranslator",
+          "version": {
+            "requires": "1.15.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "net.bytebuddy",
+          "module": "byte-buddy-agent",
+          "version": {
+            "requires": "1.18.8"
+          }
+        },
+        {
+          "group": "net.lenni0451",
+          "module": "Reflect",
+          "version": {
+            "requires": "1.6.3"
+          }
+        },
+        {
+          "group": "net.lenni0451.classtransform",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "PreloadingTricks-3.6.1-platform-forge-modlauncher.jar",
+          "url": "PreloadingTricks-3.6.1-platform-forge-modlauncher.jar",
+          "size": 895909,
+          "sha512": "3121bb9fc2fe3d52b65e986d27e9e08d952f0e8000054d4171d725946e8038aee8effaa907bca318c9e678c222b858a533c8cb8a2f1f2bc3c12ba6b748b29621",
+          "sha256": "28afa29bd64eb3c6afd032eb765b35406a3433622fb0bca19443b81b2ce05a45",
+          "sha1": "a891e9f98a62e2aa6c28dca86bba2078053f7dd3",
+          "md5": "10a305ab20a33ad9398911c9c423d329"
+        }
+      ],
+      "capabilities": [
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks-platform-forge-modlauncher",
+          "version": "3.6.1"
+        },
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks",
+          "version": "3.6.1"
+        }
+      ]
+    },
+    {
+      "name": "platformNeoforgeModlauncherApiElements",
+      "attributes": {
+        "earth.terrarium.cloche.data": false,
+        "earth.terrarium.cloche.minecraftVersion": "1.21.1",
+        "earth.terrarium.cloche.modLoader": "neoforge",
+        "earth.terrarium.cloche.side": "Client",
+        "earth.terrarium.cloche.version": "0.18.11-dust.18",
+        "io.github.mcgradleconventions.distribution": "client",
+        "io.github.mcgradleconventions.loader": "neoforge",
+        "io.github.mcgradleconventions.version": "1.21.1",
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "net.lenni0451",
+          "module": "Reflect",
+          "version": {
+            "requires": "1.6.3"
+          }
+        },
+        {
+          "group": "net.lenni0451.classtransform",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.ow2.asm",
+              "module": "*"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "PreloadingTricks-3.6.1-platform-neoforge-modlauncher.jar",
+          "url": "PreloadingTricks-3.6.1-platform-neoforge-modlauncher.jar",
+          "size": 894114,
+          "sha512": "4a703c8362e7e3002c21e93b60d1e3e84ee3d9493719775f71b148e112f12a3f8487dcfdd832a15bc1e4269a75f85cd86aa0a3a2c046a90dd2dea3fbb4bec0c9",
+          "sha256": "bab3c4cde0ed9c305596ad1a61cacd7cf3f46ab10c35527bd51df0e038ca56d7",
+          "sha1": "e82363292d9b1f5e324ea2a4a887200c77e6695c",
+          "md5": "27e7b1e83c923b959f903e90e3982109"
+        }
+      ],
+      "capabilities": [
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks-platform-neoforge-modlauncher",
+          "version": "3.6.1"
+        },
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks",
+          "version": "3.6.1"
+        }
+      ]
+    },
+    {
+      "name": "platformNeoforgeModlauncherRuntimeElements",
+      "attributes": {
+        "earth.terrarium.cloche.data": false,
+        "earth.terrarium.cloche.minecraftVersion": "1.21.1",
+        "earth.terrarium.cloche.modLoader": "neoforge",
+        "earth.terrarium.cloche.side": "Client",
+        "earth.terrarium.cloche.version": "0.18.11-dust.18",
+        "io.github.mcgradleconventions.distribution": "client",
+        "io.github.mcgradleconventions.loader": "neoforge",
+        "io.github.mcgradleconventions.version": "1.21.1",
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "net.lenni0451.classtransform",
+          "module": "additionalclassprovider",
+          "version": {
+            "requires": "1.15.0-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.ow2.asm",
+              "module": "*"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "*"
+            }
+          ]
+        },
+        {
+          "group": "net.lenni0451.classtransform",
+          "module": "mixinstranslator",
+          "version": {
+            "requires": "1.15.0-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.ow2.asm",
+              "module": "*"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "*"
+            }
+          ]
+        },
+        {
+          "group": "net.bytebuddy",
+          "module": "byte-buddy-agent",
+          "version": {
+            "requires": "1.18.8"
+          }
+        },
+        {
+          "group": "net.lenni0451",
+          "module": "Reflect",
+          "version": {
+            "requires": "1.6.3"
+          }
+        },
+        {
+          "group": "net.lenni0451.classtransform",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.ow2.asm",
+              "module": "*"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "PreloadingTricks-3.6.1-platform-neoforge-modlauncher.jar",
+          "url": "PreloadingTricks-3.6.1-platform-neoforge-modlauncher.jar",
+          "size": 894114,
+          "sha512": "4a703c8362e7e3002c21e93b60d1e3e84ee3d9493719775f71b148e112f12a3f8487dcfdd832a15bc1e4269a75f85cd86aa0a3a2c046a90dd2dea3fbb4bec0c9",
+          "sha256": "bab3c4cde0ed9c305596ad1a61cacd7cf3f46ab10c35527bd51df0e038ca56d7",
+          "sha1": "e82363292d9b1f5e324ea2a4a887200c77e6695c",
+          "md5": "27e7b1e83c923b959f903e90e3982109"
+        }
+      ],
+      "capabilities": [
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks-platform-neoforge-modlauncher",
+          "version": "3.6.1"
+        },
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks",
+          "version": "3.6.1"
+        }
+      ]
+    },
+    {
+      "name": "platformNeoforgeFancyModLoaderApiElements",
+      "attributes": {
+        "earth.terrarium.cloche.data": false,
+        "earth.terrarium.cloche.minecraftVersion": "26.1.2",
+        "earth.terrarium.cloche.modLoader": "neoforge",
+        "earth.terrarium.cloche.side": "Client",
+        "earth.terrarium.cloche.version": "0.18.11-dust.18",
+        "io.github.mcgradleconventions.distribution": "client",
+        "io.github.mcgradleconventions.loader": "neoforge",
+        "io.github.mcgradleconventions.version": "26.1.2",
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 25,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "net.lenni0451",
+          "module": "Reflect",
+          "version": {
+            "requires": "1.6.3"
+          }
+        },
+        {
+          "group": "net.lenni0451.classtransform",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.ow2.asm",
+              "module": "*"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "PreloadingTricks-3.6.1-platform-neoforge-fancy-mod-loader.jar",
+          "url": "PreloadingTricks-3.6.1-platform-neoforge-fancy-mod-loader.jar",
+          "size": 851569,
+          "sha512": "21b8925e6d582ac118b01a151d9dbe9df9e777bfb9af010cbb150d6b468815940e50e4ab48f74a2160e824724b2e864f6b0202e6e1cd85b7fdd37df899369441",
+          "sha256": "0d2736146762ed1003717710d7eb5d80236c4621cb9d5cfdb9d76e90a0fe1e09",
+          "sha1": "e586c00f0a2e17ce64463770b7efa1a1d109565f",
+          "md5": "c179ce6c1ad548b6fc6d0d7a7b9fb878"
+        }
+      ],
+      "capabilities": [
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks-platform-neoforge-fancy-mod-loader",
+          "version": "3.6.1"
+        },
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks",
+          "version": "3.6.1"
+        }
+      ]
+    },
+    {
+      "name": "platformNeoforgeFancyModLoaderRuntimeElements",
+      "attributes": {
+        "earth.terrarium.cloche.data": false,
+        "earth.terrarium.cloche.minecraftVersion": "26.1.2",
+        "earth.terrarium.cloche.modLoader": "neoforge",
+        "earth.terrarium.cloche.side": "Client",
+        "earth.terrarium.cloche.version": "0.18.11-dust.18",
+        "io.github.mcgradleconventions.distribution": "client",
+        "io.github.mcgradleconventions.loader": "neoforge",
+        "io.github.mcgradleconventions.version": "26.1.2",
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 25,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "net.lenni0451.classtransform",
+          "module": "additionalclassprovider",
+          "version": {
+            "requires": "1.15.0-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.ow2.asm",
+              "module": "*"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "*"
+            }
+          ]
+        },
+        {
+          "group": "net.lenni0451.classtransform",
+          "module": "mixinstranslator",
+          "version": {
+            "requires": "1.15.0-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.ow2.asm",
+              "module": "*"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "*"
+            }
+          ]
+        },
+        {
+          "group": "net.bytebuddy",
+          "module": "byte-buddy-agent",
+          "version": {
+            "requires": "1.18.8"
+          }
+        },
+        {
+          "group": "net.lenni0451",
+          "module": "Reflect",
+          "version": {
+            "requires": "1.6.3"
+          }
+        },
+        {
+          "group": "net.lenni0451.classtransform",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.ow2.asm",
+              "module": "*"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "PreloadingTricks-3.6.1-platform-neoforge-fancy-mod-loader.jar",
+          "url": "PreloadingTricks-3.6.1-platform-neoforge-fancy-mod-loader.jar",
+          "size": 851569,
+          "sha512": "21b8925e6d582ac118b01a151d9dbe9df9e777bfb9af010cbb150d6b468815940e50e4ab48f74a2160e824724b2e864f6b0202e6e1cd85b7fdd37df899369441",
+          "sha256": "0d2736146762ed1003717710d7eb5d80236c4621cb9d5cfdb9d76e90a0fe1e09",
+          "sha1": "e586c00f0a2e17ce64463770b7efa1a1d109565f",
+          "md5": "c179ce6c1ad548b6fc6d0d7a7b9fb878"
+        }
+      ],
+      "capabilities": [
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks-platform-neoforge-fancy-mod-loader",
+          "version": "3.6.1"
+        },
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks",
+          "version": "3.6.1"
+        }
+      ]
+    },
+    {
+      "name": "containerFabricRuntimeElements",
+      "attributes": {
+        "earth.terrarium.cloche.includeState": "None",
+        "earth.terrarium.cloche.includeTransformedOutput": false,
+        "earth.terrarium.cloche.remapped": false,
+        "io.github.mcgradleconventions.loader": "fabric",
+        "org.gradle.category": "library",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "PreloadingTricks-3.6.1-fabric.jar",
+          "url": "PreloadingTricks-3.6.1-fabric.jar",
+          "size": 48409,
+          "sha512": "7e5ede023adf5e7c805c23d1b0c14e2a0dbee3de6e4d1b04d1bd504960d731285e8f41fc5708d74d4fb6dc554bbaa9fbe5b93ff17f5deb4304ee7f3558a9ef21",
+          "sha256": "c7e88503c59f0b07e3ba55e90b2e6e4b75e1fbb867cca87adf1387d8a46a08cc",
+          "sha1": "9607709934f08c94f972ab4d71d20cc5c107b581",
+          "md5": "fbbf787ccbf29223abdaa8b252bc9e9f"
+        }
+      ],
+      "capabilities": [
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks-fabric",
+          "version": "3.6.1"
+        }
+      ]
+    },
+    {
+      "name": "containerFabricDevRuntimeElements",
+      "attributes": {
+        "earth.terrarium.cloche.includeState": "None",
+        "earth.terrarium.cloche.includeTransformedOutput": false,
+        "earth.terrarium.cloche.remapNamespace": "none",
+        "earth.terrarium.cloche.remapped": true,
+        "io.github.mcgradleconventions.loader": "fabric",
+        "org.gradle.category": "library",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "PreloadingTricks-3.6.1-fabric-dev.jar",
+          "url": "PreloadingTricks-3.6.1-fabric-dev.jar",
+          "size": 48409,
+          "sha512": "7e5ede023adf5e7c805c23d1b0c14e2a0dbee3de6e4d1b04d1bd504960d731285e8f41fc5708d74d4fb6dc554bbaa9fbe5b93ff17f5deb4304ee7f3558a9ef21",
+          "sha256": "c7e88503c59f0b07e3ba55e90b2e6e4b75e1fbb867cca87adf1387d8a46a08cc",
+          "sha1": "9607709934f08c94f972ab4d71d20cc5c107b581",
+          "md5": "fbbf787ccbf29223abdaa8b252bc9e9f"
+        }
+      ],
+      "capabilities": [
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks-fabric",
+          "version": "3.6.1"
+        }
+      ]
+    },
+    {
+      "name": "containerForgeRuntimeElements",
+      "attributes": {
+        "earth.terrarium.cloche.includeState": "None",
+        "earth.terrarium.cloche.includeTransformedOutput": false,
+        "earth.terrarium.cloche.remapped": false,
+        "io.github.mcgradleconventions.loader": "forge",
+        "org.gradle.category": "library",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "PreloadingTricks-3.6.1-forge.jar",
+          "url": "PreloadingTricks-3.6.1-forge.jar",
+          "size": 894163,
+          "sha512": "a7833048f2c9d12c54e8887f0f4948afaecd9fb2e87417417e5afe1b16b9de53f262919b231e6b432200df923073d622ff02c2b965363067236ae946de070965",
+          "sha256": "0e6eeaf533e7c514f1385b6414facacc1de50f77b3383aa604f1233441626c39",
+          "sha1": "dcf75cd95a5dd263aa7a4ddee16f9fab7a8c356c",
+          "md5": "b8ba0f92858061208fa1c0c6a2375c08"
+        }
+      ],
+      "capabilities": [
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks-forge",
+          "version": "3.6.1"
+        }
+      ]
+    },
+    {
+      "name": "containerForgeDevRuntimeElements",
+      "attributes": {
+        "earth.terrarium.cloche.includeState": "None",
+        "earth.terrarium.cloche.includeTransformedOutput": false,
+        "earth.terrarium.cloche.remapNamespace": "none",
+        "earth.terrarium.cloche.remapped": true,
+        "io.github.mcgradleconventions.loader": "forge",
+        "org.gradle.category": "library",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "PreloadingTricks-3.6.1-forge-dev.jar",
+          "url": "PreloadingTricks-3.6.1-forge-dev.jar",
+          "size": 894163,
+          "sha512": "a7833048f2c9d12c54e8887f0f4948afaecd9fb2e87417417e5afe1b16b9de53f262919b231e6b432200df923073d622ff02c2b965363067236ae946de070965",
+          "sha256": "0e6eeaf533e7c514f1385b6414facacc1de50f77b3383aa604f1233441626c39",
+          "sha1": "dcf75cd95a5dd263aa7a4ddee16f9fab7a8c356c",
+          "md5": "b8ba0f92858061208fa1c0c6a2375c08"
+        }
+      ],
+      "capabilities": [
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks-forge",
+          "version": "3.6.1"
+        }
+      ]
+    },
+    {
+      "name": "containerNeoforgeRuntimeElements",
+      "attributes": {
+        "earth.terrarium.cloche.includeState": "None",
+        "earth.terrarium.cloche.includeTransformedOutput": false,
+        "earth.terrarium.cloche.remapped": false,
+        "io.github.mcgradleconventions.loader": "neoforge",
+        "org.gradle.category": "library",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "PreloadingTricks-3.6.1-neoforge.jar",
+          "url": "PreloadingTricks-3.6.1-neoforge.jar",
+          "size": 914585,
+          "sha512": "c10976a231f6d855bc5c796ace918ec3c1044a0eb4582615e4e483b0a9c08da95cb313c82077ea50308187993465c7be21a2f2834a31317aaad3f5f716046102",
+          "sha256": "821af779b59bf900d73426c32cdd14c9322dc08f47c6b4423b1369381ddfef21",
+          "sha1": "dae6ae6f0c2d6833a5014c3c8010915a796aebdd",
+          "md5": "34c197c5bce7e3a61caa455b59301c15"
+        }
+      ],
+      "capabilities": [
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks-neoforge",
+          "version": "3.6.1"
+        }
+      ]
+    },
+    {
+      "name": "containerNeoforgeDevRuntimeElements",
+      "attributes": {
+        "earth.terrarium.cloche.includeState": "None",
+        "earth.terrarium.cloche.includeTransformedOutput": false,
+        "earth.terrarium.cloche.remapNamespace": "none",
+        "earth.terrarium.cloche.remapped": true,
+        "io.github.mcgradleconventions.loader": "neoforge",
+        "org.gradle.category": "library",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "PreloadingTricks-3.6.1-neoforge-dev.jar",
+          "url": "PreloadingTricks-3.6.1-neoforge-dev.jar",
+          "size": 914585,
+          "sha512": "c10976a231f6d855bc5c796ace918ec3c1044a0eb4582615e4e483b0a9c08da95cb313c82077ea50308187993465c7be21a2f2834a31317aaad3f5f716046102",
+          "sha256": "821af779b59bf900d73426c32cdd14c9322dc08f47c6b4423b1369381ddfef21",
+          "sha1": "dae6ae6f0c2d6833a5014c3c8010915a796aebdd",
+          "md5": "34c197c5bce7e3a61caa455b59301c15"
+        }
+      ],
+      "capabilities": [
+        {
+          "group": "settingdust.preloading_tricks",
+          "name": "PreloadingTricks-neoforge",
+          "version": "3.6.1"
+        }
+      ]
+    }
+  ]
+}
