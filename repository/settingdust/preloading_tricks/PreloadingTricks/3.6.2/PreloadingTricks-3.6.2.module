@@ -131,11 +131,11 @@
         {
           "name": "PreloadingTricks-3.6.2-platform-fabric.jar",
           "url": "PreloadingTricks-3.6.2-platform-fabric.jar",
-          "size": 835726,
-          "sha512": "ad3ee8f6c838f50398a79ee1fa20d88df4368bd44af3fdedc6df6df61df71f0134b55d53da2a5a512a65d88407b0b901045b233a8b519fdc90cf098aa438cde3",
-          "sha256": "54150d703ac7f072982d7810f7f6aeb7ad3efc9539a1cd70ef65b6d0aa2014e7",
-          "sha1": "04282e1b181b6f687470a7499c62d7428aac3cc1",
-          "md5": "a835a371b3a7b658ebb0d786b273ef0f"
+          "size": 835729,
+          "sha512": "824305cb8d144107da3c30ad0b2f5a5133eba9767e66c9d95f908c68d1ab3fb908e77cf01f167b00dfd4f1627a910500d580d1634fbde0571d16cf845ac0d17f",
+          "sha256": "b52ad52eced3848f2353eed86da0bc8ddf76c91e2e333b7bb8533134a2c19d30",
+          "sha1": "baf9c54ace8aedfa1eaf3054f0224ee7c132eb85",
+          "md5": "89deedc67ec13744fcec7f4fd3ff73e5"
         }
       ],
       "capabilities": [
@@ -224,11 +224,11 @@
         {
           "name": "PreloadingTricks-3.6.2-platform-fabric.jar",
           "url": "PreloadingTricks-3.6.2-platform-fabric.jar",
-          "size": 835726,
-          "sha512": "ad3ee8f6c838f50398a79ee1fa20d88df4368bd44af3fdedc6df6df61df71f0134b55d53da2a5a512a65d88407b0b901045b233a8b519fdc90cf098aa438cde3",
-          "sha256": "54150d703ac7f072982d7810f7f6aeb7ad3efc9539a1cd70ef65b6d0aa2014e7",
-          "sha1": "04282e1b181b6f687470a7499c62d7428aac3cc1",
-          "md5": "a835a371b3a7b658ebb0d786b273ef0f"
+          "size": 835729,
+          "sha512": "824305cb8d144107da3c30ad0b2f5a5133eba9767e66c9d95f908c68d1ab3fb908e77cf01f167b00dfd4f1627a910500d580d1634fbde0571d16cf845ac0d17f",
+          "sha256": "b52ad52eced3848f2353eed86da0bc8ddf76c91e2e333b7bb8533134a2c19d30",
+          "sha1": "baf9c54ace8aedfa1eaf3054f0224ee7c132eb85",
+          "md5": "89deedc67ec13744fcec7f4fd3ff73e5"
         }
       ],
       "capabilities": [
