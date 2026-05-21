@@ -33,7 +33,7 @@
     <dependency>
       <groupId>net.msrandom</groupId>
       <artifactId>minecraft-codev-core</artifactId>
-      <version>0.6.9-dust.1</version>
+      <version>0.6.9-dust.2</version>
       <scope>runtime</scope>
     </dependency>
   </dependencies>

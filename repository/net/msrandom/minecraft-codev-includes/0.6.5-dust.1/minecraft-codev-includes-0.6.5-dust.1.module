@@ -57,7 +57,7 @@
           "group": "net.msrandom",
           "module": "minecraft-codev-core",
           "version": {
-            "requires": "0.6.9-dust.1"
+            "requires": "0.6.9-dust.2"
           }
         }
       ],

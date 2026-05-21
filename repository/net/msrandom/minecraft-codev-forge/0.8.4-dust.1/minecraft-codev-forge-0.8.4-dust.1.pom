@@ -75,7 +75,7 @@
     <dependency>
       <groupId>net.msrandom</groupId>
       <artifactId>minecraft-codev-remapper</artifactId>
-      <version>0.7.1-dust.2</version>
+      <version>0.7.1-dust.3</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>

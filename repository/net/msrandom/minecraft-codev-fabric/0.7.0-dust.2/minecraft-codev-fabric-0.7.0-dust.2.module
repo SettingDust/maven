@@ -64,7 +64,7 @@
           "group": "net.msrandom",
           "module": "minecraft-codev-remapper",
           "version": {
-            "requires": "0.7.1-dust.2"
+            "requires": "0.7.1-dust.3"
           }
         },
         {
