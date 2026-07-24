@@ -1,0 +1,191 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "net.msrandom",
+    "module": "minecraft-codev-remapper",
+    "version": "0.7.2-dust.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.4.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "net.fabricmc",
+          "module": "mapping-io",
+          "version": {
+            "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "net.fabricmc",
+          "module": "tiny-remapper",
+          "version": {
+            "requires": "0.11.0"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-core",
+          "version": {
+            "requires": "0.7.2-dust.0"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-includes",
+          "version": {
+            "requires": "0.6.5-dust.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "minecraft-codev-remapper-0.7.2-dust.1.jar",
+          "url": "minecraft-codev-remapper-0.7.2-dust.1.jar",
+          "size": 190224,
+          "sha512": "c75a497b4e627ad66093b40a258a1b8576f63f64a96b079b76f41e3d8e2ab1d40f0c2bfbc610f86bc45eb199d43481bf95e27bc6e76c3d9773e745f973082e8e",
+          "sha256": "7f014ec81eb270faa24bc3f97f77d35e71b83989763f91a055d7dbe4d631b55f",
+          "sha1": "3fded18a437b274f8744c43e7a41c365bd2c0ff3",
+          "md5": "d473a6a416f45917d9b161baa0e267e9"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib"
+        },
+        {
+          "group": "net.fabricmc",
+          "module": "mercury",
+          "version": {
+            "requires": "0.4.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-metadata-jvm",
+          "version": {
+            "requires": "2.1.21"
+          }
+        },
+        {
+          "group": "net.fabricmc",
+          "module": "mapping-io",
+          "version": {
+            "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "net.fabricmc",
+          "module": "tiny-remapper",
+          "version": {
+            "requires": "0.11.0"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-core",
+          "version": {
+            "requires": "0.7.2-dust.0"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-includes",
+          "version": {
+            "requires": "0.6.5-dust.1"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "minecraft-codev-remapper-0.7.2-dust.1.jar",
+          "url": "minecraft-codev-remapper-0.7.2-dust.1.jar",
+          "size": 190224,
+          "sha512": "c75a497b4e627ad66093b40a258a1b8576f63f64a96b079b76f41e3d8e2ab1d40f0c2bfbc610f86bc45eb199d43481bf95e27bc6e76c3d9773e745f973082e8e",
+          "sha256": "7f014ec81eb270faa24bc3f97f77d35e71b83989763f91a055d7dbe4d631b55f",
+          "sha1": "3fded18a437b274f8744c43e7a41c365bd2c0ff3",
+          "md5": "d473a6a416f45917d9b161baa0e267e9"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "minecraft-codev-remapper-0.7.2-dust.1-sources.jar",
+          "url": "minecraft-codev-remapper-0.7.2-dust.1-sources.jar",
+          "size": 21517,
+          "sha512": "d2422ae04386cbf665fd91dc4148c56a5c367038d2ea341a7be070ec0c7129ae55c2246a033aca8096b60d76d3e1f2250e944a49065cfd151113175dffe1426d",
+          "sha256": "ef8a049f4ea22854edbe3de3081907869788f28a6bb175192c443f3e7e3f9886",
+          "sha1": "f2a7d098d9ce532b826f042c26e43e0cb677e3e2",
+          "md5": "972214719b076d2d31bfa0a5b7d8b322"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "minecraft-codev-remapper-0.7.2-dust.1-javadoc.jar",
+          "url": "minecraft-codev-remapper-0.7.2-dust.1-javadoc.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

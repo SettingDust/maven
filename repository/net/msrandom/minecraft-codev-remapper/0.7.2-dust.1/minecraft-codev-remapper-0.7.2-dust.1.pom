@@ -7,8 +7,8 @@
   <!-- do_not_remove: published-with-gradle-metadata -->
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.msrandom</groupId>
-  <artifactId>minecraft-codev-fabric</artifactId>
-  <version>0.7.2-dust.0</version>
+  <artifactId>minecraft-codev-remapper</artifactId>
+  <version>0.7.2-dust.1</version>
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -20,38 +20,44 @@
   </dependencyManagement>
   <dependencies>
     <dependency>
-      <groupId>org.jetbrains.kotlin</groupId>
-      <artifactId>kotlin-stdlib</artifactId>
-      <scope>runtime</scope>
+      <groupId>net.fabricmc</groupId>
+      <artifactId>mapping-io</artifactId>
+      <version>0.7.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.fabricmc</groupId>
+      <artifactId>tiny-remapper</artifactId>
+      <version>0.11.0</version>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>net.msrandom</groupId>
-      <artifactId>minecraft-codev-access-widener</artifactId>
-      <version>0.6.3-dust.3</version>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>net.msrandom</groupId>
-      <artifactId>minecraft-codev-remapper</artifactId>
-      <version>0.7.2-dust.1</version>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>net.msrandom</groupId>
-      <artifactId>minecraft-codev-mixins</artifactId>
-      <version>0.6.1-dust.1</version>
-      <scope>runtime</scope>
+      <artifactId>minecraft-codev-core</artifactId>
+      <version>0.7.2-dust.0</version>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>net.msrandom</groupId>
       <artifactId>minecraft-codev-includes</artifactId>
       <version>0.6.5-dust.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-stdlib</artifactId>
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>net.msrandom</groupId>
-      <artifactId>minecraft-codev-runs</artifactId>
-      <version>0.7.2-dust.0</version>
+      <groupId>net.fabricmc</groupId>
+      <artifactId>mercury</artifactId>
+      <version>0.4.2</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-metadata-jvm</artifactId>
+      <version>2.1.21</version>
       <scope>runtime</scope>
     </dependency>
   </dependencies>
