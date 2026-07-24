@@ -2,8 +2,8 @@
   "formatVersion": "1.1",
   "component": {
     "group": "net.msrandom",
-    "module": "minecraft-codev-mixins",
-    "version": "0.6.1-dust.1",
+    "module": "minecraft-codev-fabric",
+    "version": "0.7.2-dust.0",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -25,38 +25,15 @@
         "org.gradle.usage": "java-api",
         "org.jetbrains.kotlin.platform.type": "jvm"
       },
-      "dependencies": [
-        {
-          "group": "net.fabricmc",
-          "module": "sponge-mixin",
-          "version": {
-            "requires": "0.17.0+mixin.0.8.7"
-          }
-        },
-        {
-          "group": "io.github.llamalad7",
-          "module": "mixinextras-common",
-          "version": {
-            "requires": "0.5.3"
-          }
-        },
-        {
-          "group": "net.fabricmc",
-          "module": "mapping-io",
-          "version": {
-            "requires": "0.7.1"
-          }
-        }
-      ],
       "files": [
         {
-          "name": "minecraft-codev-mixins-0.6.1-dust.1.jar",
-          "url": "minecraft-codev-mixins-0.6.1-dust.1.jar",
-          "size": 65716,
-          "sha512": "7472b5ab5cb7bc3d3acac9e818457f45b364ac33f92600dd4ce0e5b8d071a679d9d232d885060f252a3cfd2e314984a4960dd3d07a0ce976e6578047efb102c8",
-          "sha256": "cf3a6aa7790c7ae6a6cfa880f07e526ebdd445853ee6221bbe6273acbe8b874b",
-          "sha1": "1f33f70dd3be42c6d39e7cda51d997c1516e2928",
-          "md5": "0fc3a70ecf25a2fbb9dedac4c61d6c87"
+          "name": "minecraft-codev-fabric-0.7.2-dust.0.jar",
+          "url": "minecraft-codev-fabric-0.7.2-dust.0.jar",
+          "size": 132205,
+          "sha512": "8a5d422c15830504fae0fe06b57d9b1695aa94a0ae35dbe4ab1d31f81fd79ea42a0f2cc4798553da59d5a57016bbaebfbe881682e843e8d0bdf669194e1fc1f1",
+          "sha256": "8612a90f077d39bf9fff6f133eadf1282450246f6794b8613b4c8048bc41e2a1",
+          "sha1": "314bdba6e0dcaa33590953d2bff7d546ca808821",
+          "md5": "af02c492f2c38f33ef8c2b4dc98eacaa"
         }
       ]
     },
@@ -78,30 +55,37 @@
         },
         {
           "group": "net.msrandom",
-          "module": "minecraft-codev-core",
+          "module": "minecraft-codev-access-widener",
+          "version": {
+            "requires": "0.6.3-dust.3"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-remapper",
           "version": {
             "requires": "0.7.2-dust.0"
           }
         },
         {
-          "group": "net.fabricmc",
-          "module": "sponge-mixin",
+          "group": "net.msrandom",
+          "module": "minecraft-codev-mixins",
           "version": {
-            "requires": "0.17.0+mixin.0.8.7"
+            "requires": "0.6.1-dust.1"
           }
         },
         {
-          "group": "io.github.llamalad7",
-          "module": "mixinextras-common",
+          "group": "net.msrandom",
+          "module": "minecraft-codev-includes",
           "version": {
-            "requires": "0.5.3"
+            "requires": "0.6.5-dust.1"
           }
         },
         {
-          "group": "net.fabricmc",
-          "module": "mapping-io",
+          "group": "net.msrandom",
+          "module": "minecraft-codev-runs",
           "version": {
-            "requires": "0.7.1"
+            "requires": "0.7.2-dust.0"
           }
         }
       ],
@@ -116,13 +100,13 @@
       ],
       "files": [
         {
-          "name": "minecraft-codev-mixins-0.6.1-dust.1.jar",
-          "url": "minecraft-codev-mixins-0.6.1-dust.1.jar",
-          "size": 65716,
-          "sha512": "7472b5ab5cb7bc3d3acac9e818457f45b364ac33f92600dd4ce0e5b8d071a679d9d232d885060f252a3cfd2e314984a4960dd3d07a0ce976e6578047efb102c8",
-          "sha256": "cf3a6aa7790c7ae6a6cfa880f07e526ebdd445853ee6221bbe6273acbe8b874b",
-          "sha1": "1f33f70dd3be42c6d39e7cda51d997c1516e2928",
-          "md5": "0fc3a70ecf25a2fbb9dedac4c61d6c87"
+          "name": "minecraft-codev-fabric-0.7.2-dust.0.jar",
+          "url": "minecraft-codev-fabric-0.7.2-dust.0.jar",
+          "size": 132205,
+          "sha512": "8a5d422c15830504fae0fe06b57d9b1695aa94a0ae35dbe4ab1d31f81fd79ea42a0f2cc4798553da59d5a57016bbaebfbe881682e843e8d0bdf669194e1fc1f1",
+          "sha256": "8612a90f077d39bf9fff6f133eadf1282450246f6794b8613b4c8048bc41e2a1",
+          "sha1": "314bdba6e0dcaa33590953d2bff7d546ca808821",
+          "md5": "af02c492f2c38f33ef8c2b4dc98eacaa"
         }
       ]
     },
@@ -136,13 +120,13 @@
       },
       "files": [
         {
-          "name": "minecraft-codev-mixins-0.6.1-dust.1-sources.jar",
-          "url": "minecraft-codev-mixins-0.6.1-dust.1-sources.jar",
-          "size": 15350,
-          "sha512": "235f70e38cd3073bac7431fdf53cd78ee225d5f089f59eb336d95928931fd2a6e2ffbd44293fb3df36cf1c8c3f466f3fcf14859a7027c85394a5972f0dfc6ea6",
-          "sha256": "4fc8e4620978793ff1c63bff483699c85ebb2141618f84a397c7dfc57a99ff5f",
-          "sha1": "0c6a6cf86e2920272e802904abdaaa201a5b0fbf",
-          "md5": "7cc7f5d641f9afa0567b2c9c34c3901f"
+          "name": "minecraft-codev-fabric-0.7.2-dust.0-sources.jar",
+          "url": "minecraft-codev-fabric-0.7.2-dust.0-sources.jar",
+          "size": 17126,
+          "sha512": "ba43a3d40493ceecdf4709420b93a207037390beedfaa2b912a1526a4d4147685d10b81a36ceddc2995c7c69fa2a06ca08a8acf676d65a197704674de9d96143",
+          "sha256": "834fad54241f2931ea1fa5777deb8830f507f4550d737ef201290efd1a20831a",
+          "sha1": "1fcb263e5856cb767ce62fdae16ad60a8ac10474",
+          "md5": "72608b98fca0c3d16641e95068caca09"
         }
       ]
     },
@@ -156,8 +140,8 @@
       },
       "files": [
         {
-          "name": "minecraft-codev-mixins-0.6.1-dust.1-javadoc.jar",
-          "url": "minecraft-codev-mixins-0.6.1-dust.1-javadoc.jar",
+          "name": "minecraft-codev-fabric-0.7.2-dust.0-javadoc.jar",
+          "url": "minecraft-codev-fabric-0.7.2-dust.0-javadoc.jar",
           "size": 261,
           "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
           "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",

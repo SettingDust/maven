@@ -2,8 +2,8 @@
   "formatVersion": "1.1",
   "component": {
     "group": "net.msrandom",
-    "module": "minecraft-codev-mixins",
-    "version": "0.6.1-dust.1",
+    "module": "minecraft-codev-remapper",
+    "version": "0.7.2-dust.0",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -28,35 +28,42 @@
       "dependencies": [
         {
           "group": "net.fabricmc",
-          "module": "sponge-mixin",
+          "module": "mapping-io",
           "version": {
-            "requires": "0.17.0+mixin.0.8.7"
-          }
-        },
-        {
-          "group": "io.github.llamalad7",
-          "module": "mixinextras-common",
-          "version": {
-            "requires": "0.5.3"
+            "requires": "0.7.1"
           }
         },
         {
           "group": "net.fabricmc",
-          "module": "mapping-io",
+          "module": "tiny-remapper",
           "version": {
-            "requires": "0.7.1"
+            "requires": "0.11.0"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-core",
+          "version": {
+            "requires": "0.7.2-dust.0"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-includes",
+          "version": {
+            "requires": "0.6.5-dust.1"
           }
         }
       ],
       "files": [
         {
-          "name": "minecraft-codev-mixins-0.6.1-dust.1.jar",
-          "url": "minecraft-codev-mixins-0.6.1-dust.1.jar",
-          "size": 65716,
-          "sha512": "7472b5ab5cb7bc3d3acac9e818457f45b364ac33f92600dd4ce0e5b8d071a679d9d232d885060f252a3cfd2e314984a4960dd3d07a0ce976e6578047efb102c8",
-          "sha256": "cf3a6aa7790c7ae6a6cfa880f07e526ebdd445853ee6221bbe6273acbe8b874b",
-          "sha1": "1f33f70dd3be42c6d39e7cda51d997c1516e2928",
-          "md5": "0fc3a70ecf25a2fbb9dedac4c61d6c87"
+          "name": "minecraft-codev-remapper-0.7.2-dust.0.jar",
+          "url": "minecraft-codev-remapper-0.7.2-dust.0.jar",
+          "size": 181775,
+          "sha512": "0c008ffd2af1d8a67397124c590eef78db7c1a67ef916304b6733ef4530353dde1b7249c88338f1f73972f646d513919b1ac7db2dab741ea6527173d0e61e135",
+          "sha256": "7a34cd711de3ebe727688a4cbb8956584ea37b88906478af7f395dc2bc307df5",
+          "sha1": "8c512ffaa91293f1f60c395ba19ffd75e6131166",
+          "md5": "e977c53f0d41a29375a604ac85c9dc66"
         }
       ]
     },
@@ -77,24 +84,17 @@
           "module": "kotlin-stdlib"
         },
         {
-          "group": "net.msrandom",
-          "module": "minecraft-codev-core",
-          "version": {
-            "requires": "0.7.2-dust.0"
-          }
-        },
-        {
           "group": "net.fabricmc",
-          "module": "sponge-mixin",
+          "module": "mercury",
           "version": {
-            "requires": "0.17.0+mixin.0.8.7"
+            "requires": "0.4.2"
           }
         },
         {
-          "group": "io.github.llamalad7",
-          "module": "mixinextras-common",
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-metadata-jvm",
           "version": {
-            "requires": "0.5.3"
+            "requires": "2.1.21"
           }
         },
         {
@@ -102,6 +102,27 @@
           "module": "mapping-io",
           "version": {
             "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "net.fabricmc",
+          "module": "tiny-remapper",
+          "version": {
+            "requires": "0.11.0"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-core",
+          "version": {
+            "requires": "0.7.2-dust.0"
+          }
+        },
+        {
+          "group": "net.msrandom",
+          "module": "minecraft-codev-includes",
+          "version": {
+            "requires": "0.6.5-dust.1"
           }
         }
       ],
@@ -116,13 +137,13 @@
       ],
       "files": [
         {
-          "name": "minecraft-codev-mixins-0.6.1-dust.1.jar",
-          "url": "minecraft-codev-mixins-0.6.1-dust.1.jar",
-          "size": 65716,
-          "sha512": "7472b5ab5cb7bc3d3acac9e818457f45b364ac33f92600dd4ce0e5b8d071a679d9d232d885060f252a3cfd2e314984a4960dd3d07a0ce976e6578047efb102c8",
-          "sha256": "cf3a6aa7790c7ae6a6cfa880f07e526ebdd445853ee6221bbe6273acbe8b874b",
-          "sha1": "1f33f70dd3be42c6d39e7cda51d997c1516e2928",
-          "md5": "0fc3a70ecf25a2fbb9dedac4c61d6c87"
+          "name": "minecraft-codev-remapper-0.7.2-dust.0.jar",
+          "url": "minecraft-codev-remapper-0.7.2-dust.0.jar",
+          "size": 181775,
+          "sha512": "0c008ffd2af1d8a67397124c590eef78db7c1a67ef916304b6733ef4530353dde1b7249c88338f1f73972f646d513919b1ac7db2dab741ea6527173d0e61e135",
+          "sha256": "7a34cd711de3ebe727688a4cbb8956584ea37b88906478af7f395dc2bc307df5",
+          "sha1": "8c512ffaa91293f1f60c395ba19ffd75e6131166",
+          "md5": "e977c53f0d41a29375a604ac85c9dc66"
         }
       ]
     },
@@ -136,13 +157,13 @@
       },
       "files": [
         {
-          "name": "minecraft-codev-mixins-0.6.1-dust.1-sources.jar",
-          "url": "minecraft-codev-mixins-0.6.1-dust.1-sources.jar",
-          "size": 15350,
-          "sha512": "235f70e38cd3073bac7431fdf53cd78ee225d5f089f59eb336d95928931fd2a6e2ffbd44293fb3df36cf1c8c3f466f3fcf14859a7027c85394a5972f0dfc6ea6",
-          "sha256": "4fc8e4620978793ff1c63bff483699c85ebb2141618f84a397c7dfc57a99ff5f",
-          "sha1": "0c6a6cf86e2920272e802904abdaaa201a5b0fbf",
-          "md5": "7cc7f5d641f9afa0567b2c9c34c3901f"
+          "name": "minecraft-codev-remapper-0.7.2-dust.0-sources.jar",
+          "url": "minecraft-codev-remapper-0.7.2-dust.0-sources.jar",
+          "size": 20576,
+          "sha512": "b169b65d8e1deacb5c4b721713ed389378e2b63d714fe5e3da3e9698387d78edaa46e94ffac50d7df2344e41e87a075dcfc06da3ebd73a344768af3475d935f8",
+          "sha256": "e7d57e4b946076792673854a7afb4719ad6735936c16c40500eb0dadd5e760ec",
+          "sha1": "71acf263c3380ccd26855a7fe54b6c9b2f18bd1f",
+          "md5": "ec4854f742a8520c3fbd991a7209fd17"
         }
       ]
     },
@@ -156,8 +177,8 @@
       },
       "files": [
         {
-          "name": "minecraft-codev-mixins-0.6.1-dust.1-javadoc.jar",
-          "url": "minecraft-codev-mixins-0.6.1-dust.1-javadoc.jar",
+          "name": "minecraft-codev-remapper-0.7.2-dust.0-javadoc.jar",
+          "url": "minecraft-codev-remapper-0.7.2-dust.0-javadoc.jar",
           "size": 261,
           "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
           "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",

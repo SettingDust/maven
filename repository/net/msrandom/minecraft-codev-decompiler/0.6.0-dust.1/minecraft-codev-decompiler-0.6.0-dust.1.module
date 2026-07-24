@@ -10,7 +10,7 @@
   },
   "createdBy": {
     "gradle": {
-      "version": "9.1.0"
+      "version": "9.4.0"
     }
   },
   "variants": [
@@ -30,10 +30,10 @@
           "name": "minecraft-codev-decompiler-0.6.0-dust.1.jar",
           "url": "minecraft-codev-decompiler-0.6.0-dust.1.jar",
           "size": 9883,
-          "sha512": "646e1923e009d90a60741b2cc1289184a3dbabb4dbb8eefb67ee72199833eeb8a3530d1a7ef4dc815027dff6b0f3a2bc0aa43da167a7ab961c0be8a6f89180be",
-          "sha256": "283868f301fabf05828257fa3e964d521dc477ea6a6b521a95bfc0bc86eaff3b",
-          "sha1": "b21d86649936010f3f5f70bd28827677a2e625f0",
-          "md5": "70a9220be8c346c6fd56375820755ad4"
+          "sha512": "e29df9687aa4db93def4857ceb84caeb0bfa7a09245c84b7b129ea45b09e3e233a05849b91e68cf905192168c4977f131451f001c8d79ae00f1976c569b61c3f",
+          "sha256": "3c50d4922a861b27d7fe7f6554fd9de12795ebdd75bb6e4f818dbef8f912c75d",
+          "sha1": "103e87483a6e537e186a2f892838d3fc60b669a6",
+          "md5": "0d4345ddba35c1c723d0947fdb1fde35"
         }
       ]
     },
@@ -64,7 +64,7 @@
           "group": "net.msrandom",
           "module": "minecraft-codev-core",
           "version": {
-            "requires": "0.6.9-dust.2"
+            "requires": "0.7.2-dust.0"
           }
         }
       ],
@@ -73,7 +73,7 @@
           "group": "org.jetbrains.kotlin",
           "module": "kotlin-stdlib",
           "version": {
-            "requires": "2.2.0"
+            "requires": "2.3.0"
           }
         }
       ],
@@ -82,10 +82,10 @@
           "name": "minecraft-codev-decompiler-0.6.0-dust.1.jar",
           "url": "minecraft-codev-decompiler-0.6.0-dust.1.jar",
           "size": 9883,
-          "sha512": "646e1923e009d90a60741b2cc1289184a3dbabb4dbb8eefb67ee72199833eeb8a3530d1a7ef4dc815027dff6b0f3a2bc0aa43da167a7ab961c0be8a6f89180be",
-          "sha256": "283868f301fabf05828257fa3e964d521dc477ea6a6b521a95bfc0bc86eaff3b",
-          "sha1": "b21d86649936010f3f5f70bd28827677a2e625f0",
-          "md5": "70a9220be8c346c6fd56375820755ad4"
+          "sha512": "e29df9687aa4db93def4857ceb84caeb0bfa7a09245c84b7b129ea45b09e3e233a05849b91e68cf905192168c4977f131451f001c8d79ae00f1976c569b61c3f",
+          "sha256": "3c50d4922a861b27d7fe7f6554fd9de12795ebdd75bb6e4f818dbef8f912c75d",
+          "sha1": "103e87483a6e537e186a2f892838d3fc60b669a6",
+          "md5": "0d4345ddba35c1c723d0947fdb1fde35"
         }
       ]
     },

@@ -14,7 +14,7 @@
       <dependency>
         <groupId>org.jetbrains.kotlin</groupId>
         <artifactId>kotlin-stdlib</artifactId>
-        <version>2.2.0</version>
+        <version>2.3.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -33,7 +33,7 @@
     <dependency>
       <groupId>net.msrandom</groupId>
       <artifactId>minecraft-codev-core</artifactId>
-      <version>0.6.9-dust.2</version>
+      <version>0.7.2-dust.0</version>
       <scope>runtime</scope>
     </dependency>
   </dependencies>

@@ -10,7 +10,7 @@
   },
   "createdBy": {
     "gradle": {
-      "version": "9.1.0"
+      "version": "9.4.0"
     }
   },
   "variants": [
@@ -45,11 +45,11 @@
         {
           "name": "minecraft-codev-access-widener-0.6.3-dust.3.jar",
           "url": "minecraft-codev-access-widener-0.6.3-dust.3.jar",
-          "size": 88411,
-          "sha512": "a520ec13d4732011c390535c3e156e998ef30d225e56f867e7dfa38c4e0f4a2e33986674bd2c6e0aec4550e9e43b029e3b1484e287b76880389bba38df0b5a6a",
-          "sha256": "d8df76bf9295bbc53fdd34e28abc78faaaf7e32339b19f7f15cafe1c5ffec5e3",
-          "sha1": "9ecdda5e265f76e6081b91c12948b8f8603904e6",
-          "md5": "edfa9ee199199c38c3484d262f0a587a"
+          "size": 88433,
+          "sha512": "4a2b33f867eb6bb91b4aca422cfc8f6001121b9c9acf11e83f0b901bb32ed5fdb2202e74318614a0be00141e6ce024ec3538aa0ebeade16f5e378690929e2264",
+          "sha256": "16c12327999806db5b07b5087e24df2f9b6629f2994d376cdf9596d2d492bdf3",
+          "sha1": "0a49b36bee6bfbb45aff0e23b59a38b01d0cf7e7",
+          "md5": "9fa836ed3b076caaadcec661b867eb00"
         }
       ]
     },
@@ -73,7 +73,7 @@
           "group": "net.msrandom",
           "module": "minecraft-codev-core",
           "version": {
-            "requires": "0.6.9-dust.2"
+            "requires": "0.7.2-dust.0"
           }
         },
         {
@@ -96,7 +96,7 @@
           "group": "org.jetbrains.kotlin",
           "module": "kotlin-stdlib",
           "version": {
-            "requires": "2.2.0"
+            "requires": "2.3.0"
           }
         }
       ],
@@ -104,11 +104,11 @@
         {
           "name": "minecraft-codev-access-widener-0.6.3-dust.3.jar",
           "url": "minecraft-codev-access-widener-0.6.3-dust.3.jar",
-          "size": 88411,
-          "sha512": "a520ec13d4732011c390535c3e156e998ef30d225e56f867e7dfa38c4e0f4a2e33986674bd2c6e0aec4550e9e43b029e3b1484e287b76880389bba38df0b5a6a",
-          "sha256": "d8df76bf9295bbc53fdd34e28abc78faaaf7e32339b19f7f15cafe1c5ffec5e3",
-          "sha1": "9ecdda5e265f76e6081b91c12948b8f8603904e6",
-          "md5": "edfa9ee199199c38c3484d262f0a587a"
+          "size": 88433,
+          "sha512": "4a2b33f867eb6bb91b4aca422cfc8f6001121b9c9acf11e83f0b901bb32ed5fdb2202e74318614a0be00141e6ce024ec3538aa0ebeade16f5e378690929e2264",
+          "sha256": "16c12327999806db5b07b5087e24df2f9b6629f2994d376cdf9596d2d492bdf3",
+          "sha1": "0a49b36bee6bfbb45aff0e23b59a38b01d0cf7e7",
+          "md5": "9fa836ed3b076caaadcec661b867eb00"
         }
       ]
     },
